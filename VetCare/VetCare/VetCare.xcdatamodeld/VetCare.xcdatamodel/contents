@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Animal" representedClassName="Animal" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" syncable="YES"/>
+        <attribute name="breed" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dob" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="specie" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="historic" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Historic" syncable="YES"/>
+        <relationship name="internment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Internment" syncable="YES"/>
+        <relationship name="medicine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medicine" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Owner" syncable="YES"/>
+        <relationship name="procedure" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Procedure" syncable="YES"/>
+    </entity>
+    <entity name="Historic" representedClassName="Historic" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="procedureName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Internment" representedClassName="Internment" syncable="YES" codeGenerationType="class">
+        <attribute name="entryDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="motive" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="veterinarian" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Medicine" representedClassName="Medicine" syncable="YES" codeGenerationType="class">
+        <attribute name="dosage" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="frequency" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalDays" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Owner" representedClassName="Owner" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Procedure" representedClassName="Procedure" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Animal" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="Animal" positionX="-279" positionY="-234" width="128" height="238"/>
+        <element name="Internment" positionX="-38" positionY="-319" width="128" height="103"/>
+        <element name="Historic" positionX="81" positionY="-171" width="128" height="73"/>
+        <element name="Medicine" positionX="-252" positionY="81" width="128" height="103"/>
+        <element name="Procedure" positionX="-74" positionY="90" width="128" height="73"/>
+        <element name="Owner" positionX="79" positionY="27" width="128" height="88"/>
     </elements>
 </model>
