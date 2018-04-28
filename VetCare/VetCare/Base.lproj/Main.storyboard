@@ -13,30 +13,98 @@
         <!--Animals-->
         <scene sceneID="hLf-4c-ydN">
             <objects>
-                <viewController id="vGt-n6-hB7" sceneMemberID="viewController">
+                <viewController id="vGt-n6-hB7" customClass="AnimalsViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="URH-ku-YvE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Animals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJo-zG-mjm">
-                                <rect key="frame" x="157" y="323" width="61" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gU6-WY-HwE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jjF-rH-05u">
+                                    <size key="itemSize" width="154" height="195"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="animalViewCell" id="R5A-Pa-oqs" customClass="AnimalViewCell" customModule="VetCare" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="154" height="195"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="154" height="195"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wX5-a4-KB0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="154" height="129"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="129" id="BTY-dY-qGW"/>
+                                                        <constraint firstAttribute="width" constant="154" id="XnS-Mz-caQ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6V-uq-QRe">
+                                                    <rect key="frame" x="6" y="136" width="72" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Dono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h31-Sq-mib">
+                                                    <rect key="frame" x="7" y="173" width="140" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Peso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfP-X5-yPH">
+                                                    <rect key="frame" x="7" y="155" width="71" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="bfP-X5-yPH" secondAttribute="trailing" constant="76" id="8oZ-k2-khV"/>
+                                            <constraint firstItem="R6V-uq-QRe" firstAttribute="top" secondItem="wX5-a4-KB0" secondAttribute="bottom" constant="7" id="Bue-8h-H4a"/>
+                                            <constraint firstItem="bfP-X5-yPH" firstAttribute="top" secondItem="R6V-uq-QRe" secondAttribute="bottom" constant="5" id="SaZ-Z9-2QW"/>
+                                            <constraint firstItem="bfP-X5-yPH" firstAttribute="leading" secondItem="R5A-Pa-oqs" secondAttribute="leading" constant="7" id="TUp-hZ-Md4"/>
+                                            <constraint firstItem="wX5-a4-KB0" firstAttribute="leading" secondItem="R5A-Pa-oqs" secondAttribute="leading" id="XBC-2a-fuu"/>
+                                            <constraint firstItem="R6V-uq-QRe" firstAttribute="leading" secondItem="R5A-Pa-oqs" secondAttribute="leading" constant="6" id="aEu-fr-Skr"/>
+                                            <constraint firstAttribute="trailing" secondItem="wX5-a4-KB0" secondAttribute="trailing" id="fHu-DU-rTx"/>
+                                            <constraint firstItem="h31-Sq-mib" firstAttribute="top" secondItem="bfP-X5-yPH" secondAttribute="bottom" constant="4" id="hjs-uU-ChH"/>
+                                            <constraint firstAttribute="trailing" secondItem="R6V-uq-QRe" secondAttribute="trailing" constant="76" id="ids-nr-162"/>
+                                            <constraint firstAttribute="trailing" secondItem="h31-Sq-mib" secondAttribute="trailing" constant="7" id="mvm-jJ-cfm"/>
+                                            <constraint firstItem="h31-Sq-mib" firstAttribute="leading" secondItem="R5A-Pa-oqs" secondAttribute="leading" constant="7" id="nUG-gc-RGa"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="animalImage" destination="wX5-a4-KB0" id="elW-eb-CDg"/>
+                                            <outlet property="animalName" destination="R6V-uq-QRe" id="x9q-1e-TAV"/>
+                                            <outlet property="animalOwner" destination="h31-Sq-mib" id="r4L-t0-QNh"/>
+                                            <outlet property="animalWeight" destination="bfP-X5-yPH" id="u0i-NU-zHx"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vGt-n6-hB7" id="v74-OC-5GT"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="IJo-zG-mjm" firstAttribute="centerX" secondItem="j5z-Dn-WRi" secondAttribute="centerX" id="0sy-9p-pfd"/>
-                            <constraint firstItem="IJo-zG-mjm" firstAttribute="centerY" secondItem="j5z-Dn-WRi" secondAttribute="centerY" id="Eqa-yf-uKb"/>
+                            <constraint firstItem="gU6-WY-HwE" firstAttribute="top" secondItem="URH-ku-YvE" secondAttribute="top" id="eeZ-9M-cx8"/>
+                            <constraint firstItem="gU6-WY-HwE" firstAttribute="bottom" secondItem="j5z-Dn-WRi" secondAttribute="bottom" id="nTn-XV-bYc"/>
+                            <constraint firstItem="gU6-WY-HwE" firstAttribute="leading" secondItem="URH-ku-YvE" secondAttribute="leading" id="o31-4a-XyM"/>
+                            <constraint firstAttribute="trailing" secondItem="gU6-WY-HwE" secondAttribute="trailing" id="suf-fU-c9G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j5z-Dn-WRi"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Animals" image="animal.png" id="KuO-7Y-be4"/>
+                    <connections>
+                        <outlet property="collectionView" destination="gU6-WY-HwE" id="Ril-eO-XNv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kx-dI-7Qb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1218" y="-439"/>
+            <point key="canvasLocation" x="1216.875" y="-439.43661971830988"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="CC5-b3-tQ3">
