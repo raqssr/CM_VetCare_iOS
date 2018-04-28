@@ -7,19 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C700DD978286060FA3CC5E25 /* Pods_VetCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A349BE31A8ED09DE05870C66 /* Pods_VetCare.framework */; };
+		CC16DEFD209496E7000E7F09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */; };
+		CC941B3B2093CE2A0097EDA9 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = CC941B372093CE290097EDA9 /* cloud.png */; };
+		CC941B3C2093CE2A0097EDA9 /* animal.png in Resources */ = {isa = PBXBuildFile; fileRef = CC941B382093CE290097EDA9 /* animal.png */; };
+		CC941B3D2093CE2A0097EDA9 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = CC941B392093CE290097EDA9 /* calendar.png */; };
+		CC941B3E2093CE2A0097EDA9 /* tasklist.png in Resources */ = {isa = PBXBuildFile; fileRef = CC941B3A2093CE290097EDA9 /* tasklist.png */; };
+		CC941B402093D1890097EDA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC941B3F2093D1890097EDA9 /* LoginViewController.swift */; };
 		CCAE2CA02091DC780013A6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE2C9F2091DC780013A6BE /* AppDelegate.swift */; };
 		CCAE2CA52091DC780013A6BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAE2CA32091DC780013A6BE /* Main.storyboard */; };
 		CCAE2CA82091DC780013A6BE /* VetCare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CCAE2CA62091DC780013A6BE /* VetCare.xcdatamodeld */; };
 		CCAE2CAA2091DC7A0013A6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCAE2CA92091DC7A0013A6BE /* Assets.xcassets */; };
 		CCAE2CAD2091DC7A0013A6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAE2CAB2091DC7A0013A6BE /* LaunchScreen.storyboard */; };
 		CCAE2CB52091E22A0013A6BE /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE2CB42091E22A0013A6BE /* MainController.swift */; };
-		CCAE2CC22091E95E0013A6BE /* animal.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAE2CBE2091E95E0013A6BE /* animal.png */; };
-		CCAE2CC32091E95E0013A6BE /* tasklist.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAE2CBF2091E95E0013A6BE /* tasklist.png */; };
-		CCAE2CC42091E95E0013A6BE /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAE2CC02091E95E0013A6BE /* calendar.png */; };
-		CCAE2CC52091E95E0013A6BE /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAE2CC12091E95E0013A6BE /* cloud.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A349BE31A8ED09DE05870C66 /* Pods_VetCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VetCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4A551B8F654B57AD40E520D /* Pods-VetCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VetCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VetCare/Pods-VetCare.debug.xcconfig"; sourceTree = "<group>"; };
+		CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CC941B372093CE290097EDA9 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cloud.png; path = "../../../ios icons/cloud.png"; sourceTree = "<group>"; };
+		CC941B382093CE290097EDA9 /* animal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = animal.png; path = "../../../ios icons/animal.png"; sourceTree = "<group>"; };
+		CC941B392093CE290097EDA9 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = "../../../ios icons/calendar.png"; sourceTree = "<group>"; };
+		CC941B3A2093CE290097EDA9 /* tasklist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tasklist.png; path = "../../../ios icons/tasklist.png"; sourceTree = "<group>"; };
+		CC941B3F2093D1890097EDA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CCAE2C9C2091DC780013A6BE /* VetCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VetCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCAE2C9F2091DC780013A6BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCAE2CA42091DC780013A6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,10 +39,7 @@
 		CCAE2CAC2091DC7A0013A6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCAE2CAE2091DC7A0013A6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCAE2CB42091E22A0013A6BE /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		CCAE2CBE2091E95E0013A6BE /* animal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = animal.png; path = "../../../../ios icons/animal.png"; sourceTree = "<group>"; };
-		CCAE2CBF2091E95E0013A6BE /* tasklist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tasklist.png; path = "../../../../ios icons/tasklist.png"; sourceTree = "<group>"; };
-		CCAE2CC02091E95E0013A6BE /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = "../../../../ios icons/calendar.png"; sourceTree = "<group>"; };
-		CCAE2CC12091E95E0013A6BE /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cloud.png; path = "../../../../ios icons/cloud.png"; sourceTree = "<group>"; };
+		DC08787151D843D3FA13187F /* Pods-VetCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VetCare.release.xcconfig"; path = "Pods/Target Support Files/Pods-VetCare/Pods-VetCare.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C700DD978286060FA3CC5E25 /* Pods_VetCare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D28D4FE5C41EAF39E645C53 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A349BE31A8ED09DE05870C66 /* Pods_VetCare.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CCAE2C932091DC770013A6BE = {
 			isa = PBXGroup;
 			children = (
 				CCAE2C9E2091DC780013A6BE /* VetCare */,
 				CCAE2C9D2091DC780013A6BE /* Products */,
+				DA5F86621566D3921ED5CA77 /* Pods */,
+				3D28D4FE5C41EAF39E645C53 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,18 +84,29 @@
 			isa = PBXGroup;
 			children = (
 				CCAE2C9F2091DC780013A6BE /* AppDelegate.swift */,
+				CC941B3F2093D1890097EDA9 /* LoginViewController.swift */,
 				CCAE2CB42091E22A0013A6BE /* MainController.swift */,
 				CCAE2CA32091DC780013A6BE /* Main.storyboard */,
 				CCAE2CA92091DC7A0013A6BE /* Assets.xcassets */,
 				CCAE2CAB2091DC7A0013A6BE /* LaunchScreen.storyboard */,
 				CCAE2CAE2091DC7A0013A6BE /* Info.plist */,
 				CCAE2CA62091DC780013A6BE /* VetCare.xcdatamodeld */,
-				CCAE2CBE2091E95E0013A6BE /* animal.png */,
-				CCAE2CC02091E95E0013A6BE /* calendar.png */,
-				CCAE2CC12091E95E0013A6BE /* cloud.png */,
-				CCAE2CBF2091E95E0013A6BE /* tasklist.png */,
+				CC941B382093CE290097EDA9 /* animal.png */,
+				CC941B392093CE290097EDA9 /* calendar.png */,
+				CC941B372093CE290097EDA9 /* cloud.png */,
+				CC941B3A2093CE290097EDA9 /* tasklist.png */,
+				CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */,
 			);
 			path = VetCare;
+			sourceTree = "<group>";
+		};
+		DA5F86621566D3921ED5CA77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4A551B8F654B57AD40E520D /* Pods-VetCare.debug.xcconfig */,
+				DC08787151D843D3FA13187F /* Pods-VetCare.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCAE2CB12091DC7A0013A6BE /* Build configuration list for PBXNativeTarget "VetCare" */;
 			buildPhases = (
+				54DE4B4571BB0AF84FF3CAB9 /* [CP] Check Pods Manifest.lock */,
 				CCAE2C982091DC780013A6BE /* Sources */,
 				CCAE2C992091DC780013A6BE /* Frameworks */,
 				CCAE2C9A2091DC780013A6BE /* Resources */,
+				ED3F9B9E31830D635B796F6F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,11 +169,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCAE2CC22091E95E0013A6BE /* animal.png in Resources */,
 				CCAE2CAD2091DC7A0013A6BE /* LaunchScreen.storyboard in Resources */,
-				CCAE2CC52091E95E0013A6BE /* cloud.png in Resources */,
-				CCAE2CC32091E95E0013A6BE /* tasklist.png in Resources */,
-				CCAE2CC42091E95E0013A6BE /* calendar.png in Resources */,
+				CC16DEFD209496E7000E7F09 /* GoogleService-Info.plist in Resources */,
+				CC941B3B2093CE2A0097EDA9 /* cloud.png in Resources */,
+				CC941B3C2093CE2A0097EDA9 /* animal.png in Resources */,
+				CC941B3E2093CE2A0097EDA9 /* tasklist.png in Resources */,
+				CC941B3D2093CE2A0097EDA9 /* calendar.png in Resources */,
 				CCAE2CAA2091DC7A0013A6BE /* Assets.xcassets in Resources */,
 				CCAE2CA52091DC780013A6BE /* Main.storyboard in Resources */,
 			);
@@ -149,11 +182,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		54DE4B4571BB0AF84FF3CAB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VetCare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED3F9B9E31830D635B796F6F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VetCare/Pods-VetCare-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VetCare/Pods-VetCare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CCAE2C982091DC780013A6BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC941B402093D1890097EDA9 /* LoginViewController.swift in Sources */,
 				CCAE2CA82091DC780013A6BE /* VetCare.xcdatamodeld in Sources */,
 				CCAE2CB52091E22A0013A6BE /* MainController.swift in Sources */,
 				CCAE2CA02091DC780013A6BE /* AppDelegate.swift in Sources */,
@@ -298,6 +375,7 @@
 		};
 		CCAE2CB22091DC7A0013A6BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4A551B8F654B57AD40E520D /* Pods-VetCare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -317,6 +395,7 @@
 		};
 		CCAE2CB32091DC7A0013A6BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC08787151D843D3FA13187F /* Pods-VetCare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

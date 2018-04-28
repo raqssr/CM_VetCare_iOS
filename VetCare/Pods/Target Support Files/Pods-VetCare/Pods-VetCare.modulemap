@@ -1,0 +1,6 @@
+framework module Pods_VetCare {
+  umbrella header "Pods-VetCare-umbrella.h"
+
+  export *
+  module * { export * }
+}
