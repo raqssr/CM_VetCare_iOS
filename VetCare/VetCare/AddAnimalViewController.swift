@@ -43,7 +43,9 @@ class AddAnimalViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        scrollView.setContentOffset(CGPoint(x:0, y:250), animated: true)
+        if textField == ownerName || textField == ownerAddress || textField == ownerPhone || textField == motive || textField == veterinarian || textField == observations{
+            scrollView.setContentOffset(CGPoint(x:0, y:250), animated: true)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
