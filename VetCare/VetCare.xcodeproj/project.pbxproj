@@ -11,17 +11,13 @@
 		CC0540142094DBDA00C39CC6 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */; };
 		CC0540162094DC9400C39CC6 /* AnimalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */; };
 		CC16DEFD209496E7000E7F09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */; };
-		CC941B3B2093CE2A0097EDA9 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = CC941B372093CE290097EDA9 /* cloud.png */; };
-		CC941B3C2093CE2A0097EDA9 /* animal.png in Resources */ = {isa = PBXBuildFile; fileRef = CC941B382093CE290097EDA9 /* animal.png */; };
-		CC941B3D2093CE2A0097EDA9 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = CC941B392093CE290097EDA9 /* calendar.png */; };
-		CC941B3E2093CE2A0097EDA9 /* tasklist.png in Resources */ = {isa = PBXBuildFile; fileRef = CC941B3A2093CE290097EDA9 /* tasklist.png */; };
 		CC941B402093D1890097EDA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC941B3F2093D1890097EDA9 /* LoginViewController.swift */; };
 		CCAE2CA02091DC780013A6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE2C9F2091DC780013A6BE /* AppDelegate.swift */; };
 		CCAE2CA52091DC780013A6BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAE2CA32091DC780013A6BE /* Main.storyboard */; };
 		CCAE2CA82091DC780013A6BE /* VetCare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CCAE2CA62091DC780013A6BE /* VetCare.xcdatamodeld */; };
-		CCAE2CAA2091DC7A0013A6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCAE2CA92091DC7A0013A6BE /* Assets.xcassets */; };
 		CCAE2CAD2091DC7A0013A6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAE2CAB2091DC7A0013A6BE /* LaunchScreen.storyboard */; };
 		CCAE2CB52091E22A0013A6BE /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE2CB42091E22A0013A6BE /* MainController.swift */; };
+		CCD976682096052300DD29D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCD976672096052300DD29D0 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,19 +26,15 @@
 		CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
 		CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewCell.swift; sourceTree = "<group>"; };
 		CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CC941B372093CE290097EDA9 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cloud.png; path = "../../../ios icons/cloud.png"; sourceTree = "<group>"; };
-		CC941B382093CE290097EDA9 /* animal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = animal.png; path = "../../../ios icons/animal.png"; sourceTree = "<group>"; };
-		CC941B392093CE290097EDA9 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = "../../../ios icons/calendar.png"; sourceTree = "<group>"; };
-		CC941B3A2093CE290097EDA9 /* tasklist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tasklist.png; path = "../../../ios icons/tasklist.png"; sourceTree = "<group>"; };
 		CC941B3F2093D1890097EDA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CCAE2C9C2091DC780013A6BE /* VetCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VetCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCAE2C9F2091DC780013A6BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCAE2CA42091DC780013A6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCAE2CA72091DC780013A6BE /* VetCare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VetCare.xcdatamodel; sourceTree = "<group>"; };
-		CCAE2CA92091DC7A0013A6BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCAE2CAC2091DC7A0013A6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCAE2CAE2091DC7A0013A6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCAE2CB42091E22A0013A6BE /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		CCD976672096052300DD29D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC08787151D843D3FA13187F /* Pods-VetCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VetCare.release.xcconfig"; path = "Pods/Target Support Files/Pods-VetCare/Pods-VetCare.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,14 +85,10 @@
 				CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */,
 				CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */,
 				CCAE2CA32091DC780013A6BE /* Main.storyboard */,
-				CCAE2CA92091DC7A0013A6BE /* Assets.xcassets */,
 				CCAE2CAB2091DC7A0013A6BE /* LaunchScreen.storyboard */,
+				CCD976672096052300DD29D0 /* Assets.xcassets */,
 				CCAE2CAE2091DC7A0013A6BE /* Info.plist */,
 				CCAE2CA62091DC780013A6BE /* VetCare.xcdatamodeld */,
-				CC941B382093CE290097EDA9 /* animal.png */,
-				CC941B392093CE290097EDA9 /* calendar.png */,
-				CC941B372093CE290097EDA9 /* cloud.png */,
-				CC941B3A2093CE290097EDA9 /* tasklist.png */,
 				CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */,
 			);
 			path = VetCare;
@@ -177,11 +165,7 @@
 			files = (
 				CCAE2CAD2091DC7A0013A6BE /* LaunchScreen.storyboard in Resources */,
 				CC16DEFD209496E7000E7F09 /* GoogleService-Info.plist in Resources */,
-				CC941B3B2093CE2A0097EDA9 /* cloud.png in Resources */,
-				CC941B3C2093CE2A0097EDA9 /* animal.png in Resources */,
-				CC941B3E2093CE2A0097EDA9 /* tasklist.png in Resources */,
-				CC941B3D2093CE2A0097EDA9 /* calendar.png in Resources */,
-				CCAE2CAA2091DC7A0013A6BE /* Assets.xcassets in Resources */,
+				CCD976682096052300DD29D0 /* Assets.xcassets in Resources */,
 				CCAE2CA52091DC780013A6BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,18 +12,46 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    let animals = ["bobi", "bolinhas", "max", "benji", "rex", "spotty", "flecha", "freddie"]
+    let weight = ["11", "12", "7", "10", "8", "15", "13", "20"]
+    let owners = ["ana", "joana", "rita", "raquel", "bia", "sofia", "maria", "ines"]
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return animals.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "animalViewCell", for: indexPath) as! AnimalViewCell
+        
+        cell.animalImage.image = UIImage(named: animals[indexPath.row])
+        cell.animalName.text = animals[indexPath.row].capitalized
+        cell.animalWeight.text = weight[indexPath.row]
+        cell.animalOwner.text = owners[indexPath.row].capitalized
+        
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true;
+        cell.contentView.layer.cornerRadius = 10
+        cell.contentView.layer.borderWidth = 1.0
+        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+        cell.contentView.layer.masksToBounds = true;
+        cell.animalImage.contentMode = UIViewContentMode.scaleAspectFill
+        cell.animalImage.clipsToBounds = true
+        
+        cell.layer.shadowColor = UIColor.lightGray.cgColor
+        cell.layer.shadowOffset = CGSize(width:0,height: 2.0)
+        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowOpacity = 1.0
+        cell.layer.masksToBounds = false;
+        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+        
+        return cell
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        collectionView.delegate = self
+        collectionView.dataSource = self
         // Do any additional setup after loading the view.
     }
 

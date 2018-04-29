@@ -42,10 +42,10 @@
     </entity>
     <elements>
         <element name="Animal" positionX="-279" positionY="-234" width="128" height="238"/>
-        <element name="Internment" positionX="-38" positionY="-319" width="128" height="103"/>
         <element name="Historic" positionX="81" positionY="-171" width="128" height="73"/>
+        <element name="Internment" positionX="-38" positionY="-319" width="128" height="103"/>
         <element name="Medicine" positionX="-252" positionY="81" width="128" height="103"/>
-        <element name="Procedure" positionX="-74" positionY="90" width="128" height="73"/>
         <element name="Owner" positionX="79" positionY="27" width="128" height="88"/>
+        <element name="Procedure" positionX="-74" positionY="90" width="128" height="73"/>
     </elements>
 </model>
