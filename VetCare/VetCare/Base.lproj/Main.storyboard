@@ -18,9 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZo-HN-YFi">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.1333333333" green="0.56862745100000001" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" red="0.1333333333" green="0.56862745100000001" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Animals" id="wcd-7V-MYT">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="T6W-Ji-iz0">
+                                            <color key="tintColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="nAF-EA-paA" kind="presentation" id="u4W-ff-BFd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gU6-WY-HwE">
-                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="455" id="AcI-XB-879"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jjF-rH-05u">
                                     <size key="itemSize" width="155" height="195"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -95,21 +117,50 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gU6-WY-HwE" firstAttribute="top" secondItem="j5z-Dn-WRi" secondAttribute="top" id="18D-ld-t3h"/>
-                            <constraint firstItem="gU6-WY-HwE" firstAttribute="bottom" secondItem="j5z-Dn-WRi" secondAttribute="bottom" id="Ayq-cW-XV3"/>
-                            <constraint firstItem="gU6-WY-HwE" firstAttribute="leading" secondItem="URH-ku-YvE" secondAttribute="leading" id="VNF-8v-Y5d"/>
-                            <constraint firstAttribute="trailing" secondItem="gU6-WY-HwE" secondAttribute="trailing" id="cKS-KW-TVm"/>
+                            <constraint firstItem="gU6-WY-HwE" firstAttribute="trailing" secondItem="wZo-HN-YFi" secondAttribute="trailing" id="G96-Uw-fRQ"/>
+                            <constraint firstAttribute="trailing" secondItem="gU6-WY-HwE" secondAttribute="trailing" id="Mj3-JX-hWm"/>
+                            <constraint firstItem="gU6-WY-HwE" firstAttribute="leading" secondItem="URH-ku-YvE" secondAttribute="leading" id="UER-2l-nTb"/>
+                            <constraint firstItem="gU6-WY-HwE" firstAttribute="bottom" secondItem="j5z-Dn-WRi" secondAttribute="bottom" id="ZIM-Zu-KrA"/>
+                            <constraint firstItem="gU6-WY-HwE" firstAttribute="top" secondItem="wZo-HN-YFi" secondAttribute="bottom" id="iVK-Nv-yTY"/>
+                            <constraint firstItem="gU6-WY-HwE" firstAttribute="leading" secondItem="wZo-HN-YFi" secondAttribute="leading" id="s4A-9r-M1M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j5z-Dn-WRi"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Animals" image="animal" id="KuO-7Y-be4"/>
                     <connections>
                         <outlet property="collectionView" destination="gU6-WY-HwE" id="Ril-eO-XNv"/>
+                        <outlet property="navigationBar" destination="wZo-HN-YFi" id="QMI-T2-eU3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kx-dI-7Qb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1216.875" y="-439.43661971830988"/>
+        </scene>
+        <!--Add Animal-->
+        <scene sceneID="RJe-xC-GEH">
+            <objects>
+                <viewController id="X3S-ev-1mJ" customClass="AddAnimalViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oDy-pc-ZhR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lJC-Vx-4X2"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Animal" id="qg7-sz-1Zl">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sta-EG-mjX">
+                            <color key="tintColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="X3S-ev-1mJ" id="Cpp-lc-YaH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nP3-el-i1D">
+                            <color key="tintColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85l-E7-9J6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3120" y="-678.16901408450701"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="CC5-b3-tQ3">
@@ -138,6 +189,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9og-Fe-OXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1217" y="282"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="sZs-6P-C8Y">
+            <objects>
+                <viewController id="ibu-2y-Tp7" customClass="ProfileViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OqG-hm-DOZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="j68-VK-KHU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CDY-KR-LTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2123" y="35"/>
         </scene>
         <!--Documents-->
         <scene sceneID="tdn-bA-PoN">
@@ -287,6 +353,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBt-TA-9Ae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-209" y="121"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1mB-ua-pti">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nAF-EA-paA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xcp-kv-lb8">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.13333333333333333" green="0.56862745098039214" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.1333333333" green="0.56862745100000001" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="X3S-ev-1mJ" kind="relationship" relationship="rootViewController" id="ZTn-5N-67X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Xp-Kf-aER" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2122.5" y="-678.16901408450701"/>
         </scene>
     </scenes>
     <resources>

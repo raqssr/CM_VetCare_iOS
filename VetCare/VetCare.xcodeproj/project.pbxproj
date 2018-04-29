@@ -18,6 +18,8 @@
 		CCAE2CAD2091DC7A0013A6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAE2CAB2091DC7A0013A6BE /* LaunchScreen.storyboard */; };
 		CCAE2CB52091E22A0013A6BE /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE2CB42091E22A0013A6BE /* MainController.swift */; };
 		CCD976682096052300DD29D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCD976672096052300DD29D0 /* Assets.xcassets */; };
+		CCD9766A209617B800DD29D0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD97669209617B800DD29D0 /* ProfileViewController.swift */; };
+		CCD9766C209617D500DD29D0 /* AddAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		CCAE2CAE2091DC7A0013A6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCAE2CB42091E22A0013A6BE /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		CCD976672096052300DD29D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCD97669209617B800DD29D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimalViewController.swift; sourceTree = "<group>"; };
 		DC08787151D843D3FA13187F /* Pods-VetCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VetCare.release.xcconfig"; path = "Pods/Target Support Files/Pods-VetCare/Pods-VetCare.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +88,8 @@
 				CCAE2CB42091E22A0013A6BE /* MainController.swift */,
 				CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */,
 				CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */,
+				CCD97669209617B800DD29D0 /* ProfileViewController.swift */,
+				CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */,
 				CCAE2CA32091DC780013A6BE /* Main.storyboard */,
 				CCAE2CAB2091DC7A0013A6BE /* LaunchScreen.storyboard */,
 				CCD976672096052300DD29D0 /* Assets.xcassets */,
@@ -222,8 +228,10 @@
 			files = (
 				CC0540142094DBDA00C39CC6 /* AnimalsViewController.swift in Sources */,
 				CC941B402093D1890097EDA9 /* LoginViewController.swift in Sources */,
+				CCD9766C209617D500DD29D0 /* AddAnimalViewController.swift in Sources */,
 				CC0540162094DC9400C39CC6 /* AnimalViewCell.swift in Sources */,
 				CCAE2CA82091DC780013A6BE /* VetCare.xcdatamodeld in Sources */,
+				CCD9766A209617B800DD29D0 /* ProfileViewController.swift in Sources */,
 				CCAE2CB52091E22A0013A6BE /* MainController.swift in Sources */,
 				CCAE2CA02091DC780013A6BE /* AppDelegate.swift in Sources */,
 			);

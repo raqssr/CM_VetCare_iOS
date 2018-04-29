@@ -10,11 +10,24 @@ import UIKit
 
 class AnimalsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
     let animals = ["bobi", "bolinhas", "max", "benji", "rex", "spotty", "flecha", "freddie"]
     let weight = ["11", "12", "7", "10", "8", "15", "13", "20"]
     let owners = ["ana", "joana", "rita", "raquel", "bia", "sofia", "maria", "ines"]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return animals.count
@@ -46,20 +59,6 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         return cell
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
