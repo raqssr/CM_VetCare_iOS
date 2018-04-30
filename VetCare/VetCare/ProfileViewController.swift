@@ -14,7 +14,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     let images = ["info", "hospitalisation", "historic"]
     let options = ["General Information", "Hospitalisation", "Animal's Record"]
-    var name = "benji"
+    let segueIdentifiers = ["generalInfo", "hospitalisation", "historic"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         photo.contentMode = UIViewContentMode.scaleAspectFill
         photo.clipsToBounds = true
         
-        photo.image = UIImage(named: name)
+        photo.image = UIImage(named: "benji")
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +48,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.accessoryType = .disclosureIndicator
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: segueIdentifiers[indexPath.row], sender: self)
     }
     
 
