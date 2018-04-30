@@ -12,6 +12,7 @@
 		CC0540162094DC9400C39CC6 /* AnimalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */; };
 		CC16DEFD209496E7000E7F09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */; };
 		CC941B402093D1890097EDA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC941B3F2093D1890097EDA9 /* LoginViewController.swift */; };
+		CC942F7D2097644400CAC241 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC942F7C2097644400CAC241 /* ProfileTableViewCell.swift */; };
 		CCAE2CA02091DC780013A6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE2C9F2091DC780013A6BE /* AppDelegate.swift */; };
 		CCAE2CA52091DC780013A6BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAE2CA32091DC780013A6BE /* Main.storyboard */; };
 		CCAE2CA82091DC780013A6BE /* VetCare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CCAE2CA62091DC780013A6BE /* VetCare.xcdatamodeld */; };
@@ -29,6 +30,7 @@
 		CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewCell.swift; sourceTree = "<group>"; };
 		CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC941B3F2093D1890097EDA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CC942F7C2097644400CAC241 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		CCAE2C9C2091DC780013A6BE /* VetCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VetCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCAE2C9F2091DC780013A6BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCAE2CA42091DC780013A6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */,
 				CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */,
 				CCD97669209617B800DD29D0 /* ProfileViewController.swift */,
+				CC942F7C2097644400CAC241 /* ProfileTableViewCell.swift */,
 				CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */,
 				CCAE2CA32091DC780013A6BE /* Main.storyboard */,
 				CCAE2CAB2091DC7A0013A6BE /* LaunchScreen.storyboard */,
@@ -229,6 +232,7 @@
 				CC0540142094DBDA00C39CC6 /* AnimalsViewController.swift in Sources */,
 				CC941B402093D1890097EDA9 /* LoginViewController.swift in Sources */,
 				CCD9766C209617D500DD29D0 /* AddAnimalViewController.swift in Sources */,
+				CC942F7D2097644400CAC241 /* ProfileTableViewCell.swift in Sources */,
 				CC0540162094DC9400C39CC6 /* AnimalViewCell.swift in Sources */,
 				CCAE2CA82091DC780013A6BE /* VetCare.xcdatamodeld in Sources */,
 				CCD9766A209617B800DD29D0 /* ProfileViewController.swift in Sources */,

@@ -8,17 +8,44 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var photo: UIImageView!
+    
+    let images = ["info", "hospitalisation", "historic"]
+    let options = ["General Information", "Hospitalisation", "Animal's Record"]
+    var name = "benji"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        photo.layer.cornerRadius = 40
+        photo.layer.borderWidth = 1.0
+        photo.layer.borderColor = UIColor.clear.cgColor
+        photo.layer.masksToBounds = true;
+        
+        photo.contentMode = UIViewContentMode.scaleAspectFill
+        photo.clipsToBounds = true
+        
+        photo.image = UIImage(named: name)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return options.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileTableViewCell
+        cell.imageOption.image = UIImage(named: images[indexPath.row])
+        cell.textOption.text = options[indexPath.row]
+        
+        return cell
     }
     
 
