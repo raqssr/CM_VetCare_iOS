@@ -45,6 +45,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.imageOption.image = UIImage(named: images[indexPath.row])
         cell.textOption.text = options[indexPath.row]
         
+        cell.accessoryType = .disclosureIndicator
+        
         return cell
     }
     
