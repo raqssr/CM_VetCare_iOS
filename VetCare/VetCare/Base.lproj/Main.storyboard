@@ -573,25 +573,31 @@
                                     <action selector="switchViewAction:" destination="2an-gi-VIR" eventType="valueChanged" id="GWb-oi-QWZ"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PYk-aM-Fww">
-                                <rect key="frame" x="0.0" y="118" width="320" height="450"/>
-                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iw9-cT-2Fg">
+                                <rect key="frame" x="0.0" y="120" width="320" height="448"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2an-gi-VIR" id="T81-eJ-NB2"/>
+                                    <outlet property="delegate" destination="2an-gi-VIR" id="aPe-Bd-OHS"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="PYk-aM-Fww" firstAttribute="trailing" secondItem="enb-wB-gPG" secondAttribute="trailing" id="AaI-FC-EUI"/>
                             <constraint firstItem="JvJ-iY-iUZ" firstAttribute="centerX" secondItem="enb-wB-gPG" secondAttribute="centerX" id="C6T-C7-ayE"/>
-                            <constraint firstItem="PYk-aM-Fww" firstAttribute="top" secondItem="JvJ-iY-iUZ" secondAttribute="bottom" constant="13" id="GTW-Et-pMJ"/>
-                            <constraint firstItem="PYk-aM-Fww" firstAttribute="bottom" secondItem="enb-wB-gPG" secondAttribute="bottom" id="IeV-en-ib8"/>
+                            <constraint firstItem="iw9-cT-2Fg" firstAttribute="trailing" secondItem="enb-wB-gPG" secondAttribute="trailing" id="WJ3-BY-7Jp"/>
                             <constraint firstItem="JvJ-iY-iUZ" firstAttribute="top" secondItem="enb-wB-gPG" secondAttribute="top" constant="13" id="Yq1-Cc-s9W"/>
+                            <constraint firstItem="iw9-cT-2Fg" firstAttribute="top" secondItem="JvJ-iY-iUZ" secondAttribute="bottom" constant="15" id="Zmm-hI-jlH"/>
                             <constraint firstItem="JvJ-iY-iUZ" firstAttribute="leading" secondItem="enb-wB-gPG" secondAttribute="leading" constant="16" id="dPr-4P-c4Z"/>
-                            <constraint firstItem="PYk-aM-Fww" firstAttribute="leading" secondItem="enb-wB-gPG" secondAttribute="leading" id="mRt-vu-YHa"/>
+                            <constraint firstItem="iw9-cT-2Fg" firstAttribute="bottom" secondItem="enb-wB-gPG" secondAttribute="bottom" id="n4A-Hm-6Jx"/>
+                            <constraint firstItem="iw9-cT-2Fg" firstAttribute="leading" secondItem="enb-wB-gPG" secondAttribute="leading" id="nTi-8P-Joq"/>
                             <constraint firstItem="enb-wB-gPG" firstAttribute="trailing" secondItem="JvJ-iY-iUZ" secondAttribute="trailing" constant="16" id="zNI-ni-P53"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="enb-wB-gPG"/>
                     </view>
                     <connections>
-                        <outlet property="viewContainer" destination="PYk-aM-Fww" id="RPo-V8-cOb"/>
+                        <outlet property="segmentedControl" destination="JvJ-iY-iUZ" id="gbO-kx-yvm"/>
+                        <outlet property="tableView" destination="iw9-cT-2Fg" id="glk-9y-JLk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1p8-Mu-1Xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
