@@ -11,6 +11,15 @@
 		CC0540142094DBDA00C39CC6 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */; };
 		CC0540162094DC9400C39CC6 /* AnimalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */; };
 		CC16DEFD209496E7000E7F09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */; };
+		CC389B952098A57B00A67F5F /* GeneralInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B942098A57B00A67F5F /* GeneralInfoViewController.swift */; };
+		CC389B972098A59600A67F5F /* HospitalisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B962098A59600A67F5F /* HospitalisationViewController.swift */; };
+		CC389B992098A5A600A67F5F /* HistoricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B982098A5A600A67F5F /* HistoricViewController.swift */; };
+		CC389BA22098A77400A67F5F /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389BA02098A77400A67F5F /* GeneralViewController.swift */; };
+		CC389BA32098A77400A67F5F /* GeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC389BA12098A77400A67F5F /* GeneralViewController.xib */; };
+		CC389BA62098A79400A67F5F /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389BA42098A79400A67F5F /* MedicationViewController.swift */; };
+		CC389BA72098A79400A67F5F /* MedicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC389BA52098A79400A67F5F /* MedicationViewController.xib */; };
+		CC389BAA2098A7B800A67F5F /* ProcedureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389BA82098A7B800A67F5F /* ProcedureViewController.swift */; };
+		CC389BAB2098A7B900A67F5F /* ProcedureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC389BA92098A7B800A67F5F /* ProcedureViewController.xib */; };
 		CC941B402093D1890097EDA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC941B3F2093D1890097EDA9 /* LoginViewController.swift */; };
 		CC942F7D2097644400CAC241 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC942F7C2097644400CAC241 /* ProfileTableViewCell.swift */; };
 		CCAE2CA02091DC780013A6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE2C9F2091DC780013A6BE /* AppDelegate.swift */; };
@@ -29,6 +38,15 @@
 		CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
 		CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewCell.swift; sourceTree = "<group>"; };
 		CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CC389B942098A57B00A67F5F /* GeneralInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralInfoViewController.swift; sourceTree = "<group>"; };
+		CC389B962098A59600A67F5F /* HospitalisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalisationViewController.swift; sourceTree = "<group>"; };
+		CC389B982098A5A600A67F5F /* HistoricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricViewController.swift; sourceTree = "<group>"; };
+		CC389BA02098A77400A67F5F /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
+		CC389BA12098A77400A67F5F /* GeneralViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralViewController.xib; sourceTree = "<group>"; };
+		CC389BA42098A79400A67F5F /* MedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
+		CC389BA52098A79400A67F5F /* MedicationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicationViewController.xib; sourceTree = "<group>"; };
+		CC389BA82098A7B800A67F5F /* ProcedureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureViewController.swift; sourceTree = "<group>"; };
+		CC389BA92098A7B800A67F5F /* ProcedureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProcedureViewController.xib; sourceTree = "<group>"; };
 		CC941B3F2093D1890097EDA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CC942F7C2097644400CAC241 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		CCAE2C9C2091DC780013A6BE /* VetCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VetCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,15 +108,24 @@
 				CCAE2CB42091E22A0013A6BE /* MainController.swift */,
 				CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */,
 				CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */,
+				CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */,
 				CCD97669209617B800DD29D0 /* ProfileViewController.swift */,
 				CC942F7C2097644400CAC241 /* ProfileTableViewCell.swift */,
-				CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */,
+				CC389B942098A57B00A67F5F /* GeneralInfoViewController.swift */,
+				CC389B962098A59600A67F5F /* HospitalisationViewController.swift */,
+				CC389B982098A5A600A67F5F /* HistoricViewController.swift */,
 				CCAE2CA32091DC780013A6BE /* Main.storyboard */,
 				CCAE2CAB2091DC7A0013A6BE /* LaunchScreen.storyboard */,
 				CCD976672096052300DD29D0 /* Assets.xcassets */,
 				CCAE2CAE2091DC7A0013A6BE /* Info.plist */,
 				CCAE2CA62091DC780013A6BE /* VetCare.xcdatamodeld */,
 				CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */,
+				CC389BA02098A77400A67F5F /* GeneralViewController.swift */,
+				CC389BA12098A77400A67F5F /* GeneralViewController.xib */,
+				CC389BA42098A79400A67F5F /* MedicationViewController.swift */,
+				CC389BA52098A79400A67F5F /* MedicationViewController.xib */,
+				CC389BA82098A7B800A67F5F /* ProcedureViewController.swift */,
+				CC389BA92098A7B800A67F5F /* ProcedureViewController.xib */,
 			);
 			path = VetCare;
 			sourceTree = "<group>";
@@ -173,7 +200,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCAE2CAD2091DC7A0013A6BE /* LaunchScreen.storyboard in Resources */,
+				CC389BA32098A77400A67F5F /* GeneralViewController.xib in Resources */,
 				CC16DEFD209496E7000E7F09 /* GoogleService-Info.plist in Resources */,
+				CC389BAB2098A7B900A67F5F /* ProcedureViewController.xib in Resources */,
+				CC389BA72098A79400A67F5F /* MedicationViewController.xib in Resources */,
 				CCD976682096052300DD29D0 /* Assets.xcassets in Resources */,
 				CCAE2CA52091DC780013A6BE /* Main.storyboard in Resources */,
 			);
@@ -232,9 +262,15 @@
 				CC0540142094DBDA00C39CC6 /* AnimalsViewController.swift in Sources */,
 				CC941B402093D1890097EDA9 /* LoginViewController.swift in Sources */,
 				CCD9766C209617D500DD29D0 /* AddAnimalViewController.swift in Sources */,
+				CC389B992098A5A600A67F5F /* HistoricViewController.swift in Sources */,
 				CC942F7D2097644400CAC241 /* ProfileTableViewCell.swift in Sources */,
+				CC389BA62098A79400A67F5F /* MedicationViewController.swift in Sources */,
 				CC0540162094DC9400C39CC6 /* AnimalViewCell.swift in Sources */,
+				CC389BA22098A77400A67F5F /* GeneralViewController.swift in Sources */,
+				CC389B952098A57B00A67F5F /* GeneralInfoViewController.swift in Sources */,
 				CCAE2CA82091DC780013A6BE /* VetCare.xcdatamodeld in Sources */,
+				CC389B972098A59600A67F5F /* HospitalisationViewController.swift in Sources */,
+				CC389BAA2098A7B800A67F5F /* ProcedureViewController.swift in Sources */,
 				CCD9766A209617B800DD29D0 /* ProfileViewController.swift in Sources */,
 				CCAE2CB52091E22A0013A6BE /* MainController.swift in Sources */,
 				CCAE2CA02091DC780013A6BE /* AppDelegate.swift in Sources */,
