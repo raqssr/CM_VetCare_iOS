@@ -20,6 +20,7 @@
 		CC389BB32098B64C00A67F5F /* MedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC389BB12098B64C00A67F5F /* MedicineTableViewCell.xib */; };
 		CC389BB82098B68400A67F5F /* ProcedureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389BB62098B68400A67F5F /* ProcedureTableViewCell.swift */; };
 		CC389BB92098B68400A67F5F /* ProcedureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC389BB72098B68400A67F5F /* ProcedureTableViewCell.xib */; };
+		CC389BBB2098C72E00A67F5F /* HistoricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389BBA2098C72E00A67F5F /* HistoricTableViewCell.swift */; };
 		CC941B402093D1890097EDA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC941B3F2093D1890097EDA9 /* LoginViewController.swift */; };
 		CC942F7D2097644400CAC241 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC942F7C2097644400CAC241 /* ProfileTableViewCell.swift */; };
 		CCAE2CA02091DC780013A6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE2C9F2091DC780013A6BE /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		CC389BB12098B64C00A67F5F /* MedicineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTableViewCell.xib; sourceTree = "<group>"; };
 		CC389BB62098B68400A67F5F /* ProcedureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureTableViewCell.swift; sourceTree = "<group>"; };
 		CC389BB72098B68400A67F5F /* ProcedureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProcedureTableViewCell.xib; sourceTree = "<group>"; };
+		CC389BBA2098C72E00A67F5F /* HistoricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricTableViewCell.swift; sourceTree = "<group>"; };
 		CC941B3F2093D1890097EDA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CC942F7C2097644400CAC241 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		CCAE2C9C2091DC780013A6BE /* VetCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VetCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 				CC389B942098A57B00A67F5F /* GeneralInfoViewController.swift */,
 				CC389B962098A59600A67F5F /* HospitalisationViewController.swift */,
 				CC389B982098A5A600A67F5F /* HistoricViewController.swift */,
+				CC389BBA2098C72E00A67F5F /* HistoricTableViewCell.swift */,
 				CCAE2CA32091DC780013A6BE /* Main.storyboard */,
 				CCAE2CAB2091DC7A0013A6BE /* LaunchScreen.storyboard */,
 				CCD976672096052300DD29D0 /* Assets.xcassets */,
@@ -273,6 +276,7 @@
 				CC389B972098A59600A67F5F /* HospitalisationViewController.swift in Sources */,
 				CCD9766A209617B800DD29D0 /* ProfileViewController.swift in Sources */,
 				CCAE2CB52091E22A0013A6BE /* MainController.swift in Sources */,
+				CC389BBB2098C72E00A67F5F /* HistoricTableViewCell.swift in Sources */,
 				CCAE2CA02091DC780013A6BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
