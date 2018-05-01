@@ -506,6 +506,7 @@
                         <viewLayoutGuide key="safeArea" id="j68-VK-KHU"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Nv4-OQ-Khk">
+                        <barButtonItem key="backBarButtonItem" title=" " id="wnD-gY-z1S"/>
                         <barButtonItem key="leftBarButtonItem" title="Back" id="rs1-oQ-eAf">
                             <color key="tintColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
@@ -1068,6 +1069,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w9z-fs-wRe">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.1333333333" green="0.56862745100000001" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
