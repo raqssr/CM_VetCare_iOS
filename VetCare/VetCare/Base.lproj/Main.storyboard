@@ -1135,20 +1135,6 @@
             </objects>
             <point key="canvasLocation" x="2122.5" y="29.577464788732396"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="55h-7g-gtJ">
-            <objects>
-                <viewController id="mJL-GE-JSg" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="96H-BW-Asd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Fgo-K6-ad8"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wf9-vU-HiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
         <!--Task List-->
         <scene sceneID="piP-ka-pu2">
             <objects>

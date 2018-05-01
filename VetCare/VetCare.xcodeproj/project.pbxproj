@@ -88,6 +88,129 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CCA7D8C1209901E5007F28DA /* calendar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = calendar;
+			sourceTree = "<group>";
+		};
+		CCA7D8C320990213007F28DA /* login */ = {
+			isa = PBXGroup;
+			children = (
+				CC941B3F2093D1890097EDA9 /* LoginViewController.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		CCA7D8C42099023A007F28DA /* main */ = {
+			isa = PBXGroup;
+			children = (
+				CCAE2CB42091E22A0013A6BE /* MainController.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		CCA7D8C52099024A007F28DA /* pets */ = {
+			isa = PBXGroup;
+			children = (
+				CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */,
+				CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */,
+				CCA7D8C9209902AA007F28DA /* profile */,
+				CCA7D8C82099028B007F28DA /* cells */,
+			);
+			path = pets;
+			sourceTree = "<group>";
+		};
+		CCA7D8C62099025E007F28DA /* tasklist */ = {
+			isa = PBXGroup;
+			children = (
+				CCA7D8C720990273007F28DA /* cells */,
+				CC389BBC2098CA0600A67F5F /* TaskListViewController.swift */,
+			);
+			path = tasklist;
+			sourceTree = "<group>";
+		};
+		CCA7D8C720990273007F28DA /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				CC389BBE2098CD0400A67F5F /* TaskListTableViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		CCA7D8C82099028B007F28DA /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		CCA7D8C9209902AA007F28DA /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				CCD97669209617B800DD29D0 /* ProfileViewController.swift */,
+				CCA7D8CD20990309007F28DA /* historic */,
+				CCA7D8CC20990301007F28DA /* hospitalisation */,
+				CCA7D8CB209902F9007F28DA /* info */,
+				CCA7D8CA209902D6007F28DA /* cells */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
+		CCA7D8CA209902D6007F28DA /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				CC942F7C2097644400CAC241 /* ProfileTableViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		CCA7D8CB209902F9007F28DA /* info */ = {
+			isa = PBXGroup;
+			children = (
+				CC389B942098A57B00A67F5F /* GeneralInfoViewController.swift */,
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
+		CCA7D8CC20990301007F28DA /* hospitalisation */ = {
+			isa = PBXGroup;
+			children = (
+				CC389B962098A59600A67F5F /* HospitalisationViewController.swift */,
+				CCA7D8CF20990354007F28DA /* cells */,
+			);
+			path = hospitalisation;
+			sourceTree = "<group>";
+		};
+		CCA7D8CD20990309007F28DA /* historic */ = {
+			isa = PBXGroup;
+			children = (
+				CCA7D8CE20990334007F28DA /* cells */,
+				CC389B982098A5A600A67F5F /* HistoricViewController.swift */,
+			);
+			path = historic;
+			sourceTree = "<group>";
+		};
+		CCA7D8CE20990334007F28DA /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				CC389BBA2098C72E00A67F5F /* HistoricTableViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		CCA7D8CF20990354007F28DA /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				CC389BAC2098B60300A67F5F /* GeneralTableViewCell.swift */,
+				CC389BB02098B64C00A67F5F /* MedicineTableViewCell.swift */,
+				CC389BB62098B68400A67F5F /* ProcedureTableViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		CCAE2C932091DC770013A6BE = {
 			isa = PBXGroup;
 			children = (
@@ -109,31 +232,20 @@
 		CCAE2C9E2091DC780013A6BE /* VetCare */ = {
 			isa = PBXGroup;
 			children = (
+				CCA7D8C62099025E007F28DA /* tasklist */,
+				CCA7D8C52099024A007F28DA /* pets */,
+				CCA7D8C42099023A007F28DA /* main */,
+				CCA7D8C320990213007F28DA /* login */,
+				CCA7D8C1209901E5007F28DA /* calendar */,
 				CCAE2C9F2091DC780013A6BE /* AppDelegate.swift */,
-				CC941B3F2093D1890097EDA9 /* LoginViewController.swift */,
-				CCAE2CB42091E22A0013A6BE /* MainController.swift */,
-				CC389BBC2098CA0600A67F5F /* TaskListViewController.swift */,
-				CC389BBE2098CD0400A67F5F /* TaskListTableViewCell.swift */,
-				CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */,
-				CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */,
-				CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */,
-				CCD97669209617B800DD29D0 /* ProfileViewController.swift */,
-				CC942F7C2097644400CAC241 /* ProfileTableViewCell.swift */,
-				CC389B942098A57B00A67F5F /* GeneralInfoViewController.swift */,
-				CC389B962098A59600A67F5F /* HospitalisationViewController.swift */,
-				CC389B982098A5A600A67F5F /* HistoricViewController.swift */,
-				CC389BBA2098C72E00A67F5F /* HistoricTableViewCell.swift */,
 				CCAE2CA32091DC780013A6BE /* Main.storyboard */,
 				CCAE2CAB2091DC7A0013A6BE /* LaunchScreen.storyboard */,
 				CCD976672096052300DD29D0 /* Assets.xcassets */,
 				CCAE2CAE2091DC7A0013A6BE /* Info.plist */,
 				CCAE2CA62091DC780013A6BE /* VetCare.xcdatamodeld */,
 				CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */,
-				CC389BAC2098B60300A67F5F /* GeneralTableViewCell.swift */,
 				CC389BAD2098B60300A67F5F /* GeneralTableViewCell.xib */,
-				CC389BB02098B64C00A67F5F /* MedicineTableViewCell.swift */,
 				CC389BB12098B64C00A67F5F /* MedicineTableViewCell.xib */,
-				CC389BB62098B68400A67F5F /* ProcedureTableViewCell.swift */,
 				CC389BB72098B68400A67F5F /* ProcedureTableViewCell.xib */,
 			);
 			path = VetCare;
@@ -246,12 +358,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VetCare/Pods-VetCare-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
