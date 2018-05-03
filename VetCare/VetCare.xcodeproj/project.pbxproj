@@ -11,6 +11,8 @@
 		CC0540142094DBDA00C39CC6 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */; };
 		CC0540162094DC9400C39CC6 /* AnimalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */; };
 		CC16DEFD209496E7000E7F09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */; };
+		CC28E562209B3DE200F1ADCE /* MBCalendarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC28E561209B3DE200F1ADCE /* MBCalendarKit.framework */; };
+		CC28E564209B473900F1ADCE /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28E563209B473900F1ADCE /* CalendarViewController.swift */; };
 		CC389B952098A57B00A67F5F /* GeneralInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B942098A57B00A67F5F /* GeneralInfoViewController.swift */; };
 		CC389B972098A59600A67F5F /* HospitalisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B962098A59600A67F5F /* HospitalisationViewController.swift */; };
 		CC389B992098A5A600A67F5F /* HistoricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B982098A5A600A67F5F /* HistoricViewController.swift */; };
@@ -41,6 +43,9 @@
 		CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
 		CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewCell.swift; sourceTree = "<group>"; };
 		CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CC28E55F209B3DC200F1ADCE /* MBCalendarKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBCalendarKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC28E561209B3DE200F1ADCE /* MBCalendarKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBCalendarKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC28E563209B473900F1ADCE /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		CC389B942098A57B00A67F5F /* GeneralInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralInfoViewController.swift; sourceTree = "<group>"; };
 		CC389B962098A59600A67F5F /* HospitalisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalisationViewController.swift; sourceTree = "<group>"; };
 		CC389B982098A5A600A67F5F /* HistoricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC28E562209B3DE200F1ADCE /* MBCalendarKit.framework in Frameworks */,
 				C700DD978286060FA3CC5E25 /* Pods_VetCare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +89,8 @@
 		3D28D4FE5C41EAF39E645C53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC28E561209B3DE200F1ADCE /* MBCalendarKit.framework */,
+				CC28E55F209B3DC200F1ADCE /* MBCalendarKit.framework */,
 				A349BE31A8ED09DE05870C66 /* Pods_VetCare.framework */,
 			);
 			name = Frameworks;
@@ -91,6 +99,7 @@
 		CCA7D8C1209901E5007F28DA /* calendar */ = {
 			isa = PBXGroup;
 			children = (
+				CC28E563209B473900F1ADCE /* CalendarViewController.swift */,
 			);
 			path = calendar;
 			sourceTree = "<group>";
@@ -358,16 +367,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VetCare/Pods-VetCare-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +401,7 @@
 				CC389BB82098B68400A67F5F /* ProcedureTableViewCell.swift in Sources */,
 				CC389B952098A57B00A67F5F /* GeneralInfoViewController.swift in Sources */,
 				CC389BAE2098B60300A67F5F /* GeneralTableViewCell.swift in Sources */,
+				CC28E564209B473900F1ADCE /* CalendarViewController.swift in Sources */,
 				CCAE2CA82091DC780013A6BE /* VetCare.xcdatamodeld in Sources */,
 				CC389BB22098B64C00A67F5F /* MedicineTableViewCell.swift in Sources */,
 				CC389B972098A59600A67F5F /* HospitalisationViewController.swift in Sources */,

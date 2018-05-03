@@ -8,6 +8,6 @@ target 'VetCare' do
   # Pods for VetCare
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
-  pod 'FSCalendar', '~>2.7.1'
+  pod 'MBCalendarKit', '5.0.0'
 
 end
