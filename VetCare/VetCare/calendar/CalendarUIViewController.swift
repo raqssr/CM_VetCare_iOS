@@ -30,30 +30,34 @@ class CalendarUIViewController: CalendarViewController {
         self.delegate = self
         self.dataSource = self
         
-        //Instatiate a calendar view
-        let calendar = CalendarView()
-        //Present the calendar view
-        self.view.addSubview(calendar)
-        //Constraint with auto layout
-        let top = self.topLayoutGuide.bottomAnchor
-        let center = self.view.centerXAnchor
-        calendar.translatesAutoresizingMaskIntoConstraints = false
-        calendar.topAnchor.constraint(equalTo: top).isActive = true
-        calendar.centerXAnchor.constraint(equalTo: center).isActive = true
+//        //Instatiate a calendar view
+//        let calendar = CalendarView()
+//        //Present the calendar view
+//        self.view.addSubview(calendar)
+//        //Constraint with auto layout
+//        let top = self.topLayoutGuide.bottomAnchor
+//        let center = self.view.centerXAnchor
+//        calendar.translatesAutoresizingMaskIntoConstraints = false
+//        calendar.topAnchor.constraint(equalTo: top).isActive = true
+//        calendar.centerXAnchor.constraint(equalTo: center).isActive = true
         
         let title : NSString = NSLocalizedString("Add Swift Demo", comment: "") as NSString
-        if let date : Date = NSDate(day: 2, month: 5, year: 2018) as Date?
+        if let date : Date = NSDate(day: 1, month: 5, year: 2018) as Date?
         {
             let event : CalendarEvent = CalendarEvent(title: title as String, andDate: date, andInfo: nil)
             self.data[date] = [event]
+            print("primeiro evento adicionado")
         }
         
         let title2 : NSString = NSLocalizedString("Release MBCalendarKit 5.0.0", comment: "") as NSString
-        if let date2 : Date = NSDate(day: 15, month: 8, year: 2017) as Date?
+        if let date2 : Date = NSDate(day: 20, month: 5, year: 2018) as Date?
         {
             let event2 : CalendarEvent = CalendarEvent(title: title2 as String, andDate: date2, andInfo: nil)
             self.data[date2] = [event2]
+            print("segundo evento adicionado")
         }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,12 +65,15 @@ class CalendarUIViewController: CalendarViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //  MARK: - CalendarDataSource
-    
-    override func calendarView(_ calendarView: CalendarView, eventsFor date: Date) -> [CalendarEvent]
-    {
+    /**
+     Allows the data source to supply events to display on the calendar.
+     
+     @param calendarView The calendar view instance that will display the data.
+     @param date The date for which the calendar view wants events.
+     @return An array of events objects.
+     */
+    override func calendarView(_ calendarView: CalendarView, eventsFor date: Date) -> [CalendarEvent] {
         let eventsForDate = self.data[date] ?? []
-        
         return eventsForDate
     }
     

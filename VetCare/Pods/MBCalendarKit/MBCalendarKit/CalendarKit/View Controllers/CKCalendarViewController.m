@@ -80,14 +80,14 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     
-    NSArray *items = @[
-                       NSLocalizedString(@"Month", @"A title for the month view button."),
-                       NSLocalizedString(@"Week",@"A title for the week view button."),
-                       NSLocalizedString(@"Day", @"A title for the day view button.")];
+//    NSArray *items = @[
+//                       NSLocalizedString(@"Month", @"A title for the month view button."),
+//                       NSLocalizedString(@"Week",@"A title for the week view button."),
+//                       NSLocalizedString(@"Day", @"A title for the day view button.")];
     
-    _modePicker = [[UISegmentedControl alloc] initWithItems:items];
-    [self.modePicker addTarget:self action:@selector(modeChangedUsingControl:) forControlEvents:UIControlEventValueChanged];
-    self.modePicker.selectedSegmentIndex = 0;
+//    _modePicker = [[UISegmentedControl alloc] initWithItems:items];
+//    [self.modePicker addTarget:self action:@selector(modeChangedUsingControl:) forControlEvents:UIControlEventValueChanged];
+//    self.modePicker.selectedSegmentIndex = 0;
 }
 
 // MARK: - View Lifecycle
@@ -226,12 +226,12 @@
 
 - (void)installToolbar
 {
-    NSString *todayTitle = NSLocalizedString(@"Today", @"A button which sets the calendar to today.");
-    UIBarButtonItem *todayButton = [[UIBarButtonItem alloc] initWithTitle:todayTitle style:UIBarButtonItemStylePlain target:self action:@selector(todayButtonTapped:)];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:self.modePicker];
-    
-    [self setToolbarItems:@[todayButton, item] animated:NO];
-    [self.navigationController setToolbarHidden:NO animated:NO];
+//    NSString *todayTitle = NSLocalizedString(@"Today", @"A button which sets the calendar to today.");
+//    UIBarButtonItem *todayButton = [[UIBarButtonItem alloc] initWithTitle:todayTitle style:UIBarButtonItemStylePlain target:self action:@selector(todayButtonTapped:)];
+//    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:self.modePicker];
+//    
+//    [self setToolbarItems:@[todayButton, item] animated:NO];
+//    [self.navigationController setToolbarHidden:NO animated:NO];
 }
 
 // MARK: - Toolbar Items
