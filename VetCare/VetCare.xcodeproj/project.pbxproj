@@ -12,7 +12,7 @@
 		CC0540162094DC9400C39CC6 /* AnimalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */; };
 		CC16DEFD209496E7000E7F09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */; };
 		CC28E562209B3DE200F1ADCE /* MBCalendarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC28E561209B3DE200F1ADCE /* MBCalendarKit.framework */; };
-		CC28E564209B473900F1ADCE /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28E563209B473900F1ADCE /* CalendarViewController.swift */; };
+		CC28E564209B473900F1ADCE /* CalendarUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28E563209B473900F1ADCE /* CalendarUIViewController.swift */; };
 		CC389B952098A57B00A67F5F /* GeneralInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B942098A57B00A67F5F /* GeneralInfoViewController.swift */; };
 		CC389B972098A59600A67F5F /* HospitalisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B962098A59600A67F5F /* HospitalisationViewController.swift */; };
 		CC389B992098A5A600A67F5F /* HistoricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B982098A5A600A67F5F /* HistoricViewController.swift */; };
@@ -45,7 +45,7 @@
 		CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC28E55F209B3DC200F1ADCE /* MBCalendarKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBCalendarKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC28E561209B3DE200F1ADCE /* MBCalendarKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBCalendarKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC28E563209B473900F1ADCE /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		CC28E563209B473900F1ADCE /* CalendarUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUIViewController.swift; sourceTree = "<group>"; };
 		CC389B942098A57B00A67F5F /* GeneralInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralInfoViewController.swift; sourceTree = "<group>"; };
 		CC389B962098A59600A67F5F /* HospitalisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalisationViewController.swift; sourceTree = "<group>"; };
 		CC389B982098A5A600A67F5F /* HistoricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		CCA7D8C1209901E5007F28DA /* calendar */ = {
 			isa = PBXGroup;
 			children = (
-				CC28E563209B473900F1ADCE /* CalendarViewController.swift */,
+				CC28E563209B473900F1ADCE /* CalendarUIViewController.swift */,
 			);
 			path = calendar;
 			sourceTree = "<group>";
@@ -401,7 +401,7 @@
 				CC389BB82098B68400A67F5F /* ProcedureTableViewCell.swift in Sources */,
 				CC389B952098A57B00A67F5F /* GeneralInfoViewController.swift in Sources */,
 				CC389BAE2098B60300A67F5F /* GeneralTableViewCell.swift in Sources */,
-				CC28E564209B473900F1ADCE /* CalendarViewController.swift in Sources */,
+				CC28E564209B473900F1ADCE /* CalendarUIViewController.swift in Sources */,
 				CCAE2CA82091DC780013A6BE /* VetCare.xcdatamodeld in Sources */,
 				CC389BB22098B64C00A67F5F /* MedicineTableViewCell.swift in Sources */,
 				CC389B972098A59600A67F5F /* HospitalisationViewController.swift in Sources */,

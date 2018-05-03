@@ -356,7 +356,7 @@
         <!--Calendar-->
         <scene sceneID="CC5-b3-tQ3">
             <objects>
-                <viewController id="rtB-UZ-agz" customClass="CalendarViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rtB-UZ-agz" customClass="CalendarUIViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3dI-et-Mi5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

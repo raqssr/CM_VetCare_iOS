@@ -1,5 +1,5 @@
 //
-//  CalendarViewController.swift
+//  Calendar.swift
 //  VetCare
 //
 //  Created by Raquel Ramos on 03/05/2018.
@@ -7,25 +7,13 @@
 //
 
 import UIKit
-import MBCalendarKit
 
-class CalendarViewController: UIViewController {
+class Calendar: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        //Instatiate a calendar view
-        let calendar = CalendarView()
-        //Present the calendar view
-        self.view.addSubview(calendar)
-        //Constraint with auto layout
-        let top = self.topLayoutGuide.bottomAnchor
-        let center = self.view.centerXAnchor
-        calendar.translatesAutoresizingMaskIntoConstraints = false
-        calendar.topAnchor.constraint(equalTo: top).isActive = true
-        calendar.centerXAnchor.constraint(equalTo: center).isActive = true
     }
 
     override func didReceiveMemoryWarning() {
