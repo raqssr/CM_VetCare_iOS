@@ -497,6 +497,9 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="wnD-gY-z1S"/>
                         <barButtonItem key="leftBarButtonItem" title="Back" id="rs1-oQ-eAf">
                             <color key="tintColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="goBack:" destination="ibu-2y-Tp7" id="MXy-ld-Qsj"/>
+                            </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="trash" id="VPa-ru-NQy">
@@ -874,7 +877,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h44-uO-3QS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3973.5999999999999" y="-402.54872563718146"/>
+            <point key="canvasLocation" x="5130" y="-418"/>
         </scene>
         <!--Documents-->
         <scene sceneID="tdn-bA-PoN">
@@ -975,11 +978,49 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aSB-pk-nYG"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Task List" id="9Nl-Bb-VEa"/>
+                    <navigationItem key="navigationItem" title="Task List" id="9Nl-Bb-VEa">
+                        <barButtonItem key="backBarButtonItem" title=" " id="R0S-Ps-Xee"/>
+                        <barButtonItem key="rightBarButtonItem" image="qr_code" id="cMB-pm-7v6">
+                            <connections>
+                                <segue destination="gaU-w0-JwO" kind="show" id="KjN-rk-d6i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6GO-V8-0OH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1980" y="-1205.2816901408451"/>
+        </scene>
+        <!--Code View Controller-->
+        <scene sceneID="ysn-DJ-fsq">
+            <objects>
+                <viewController id="gaU-w0-JwO" customClass="QRCodeViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Am7-Yi-7H7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wkv-JY-A8x">
+                                <rect key="frame" x="40" y="171.5" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="N09-rZ-D5w"/>
+                                    <constraint firstAttribute="width" constant="240" id="hg6-NC-ZpL"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wkv-JY-A8x" firstAttribute="centerY" secondItem="bg3-Dp-hjt" secondAttribute="centerY" id="aQb-qK-dHc"/>
+                            <constraint firstItem="Wkv-JY-A8x" firstAttribute="centerX" secondItem="bg3-Dp-hjt" secondAttribute="centerX" id="eTq-Lb-CLz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bg3-Dp-hjt"/>
+                    </view>
+                    <connections>
+                        <outlet property="square" destination="Wkv-JY-A8x" id="Kuc-8L-HSA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zkj-OU-r40" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2739.375" y="-1320.4225352112676"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="a1p-ok-Qjm">
@@ -1096,7 +1137,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xp-Kf-aER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3120" y="-678.16901408450701"/>
+            <point key="canvasLocation" x="3120" y="-635"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gtF-jZ-OCf">
@@ -1180,6 +1221,8 @@
         <image name="animal" width="30" height="30"/>
         <image name="calendar" width="30" height="30"/>
         <image name="cloud" width="30" height="30"/>
+        <image name="qr_code" width="30" height="30"/>
+        <image name="square.png" width="252" height="252"/>
         <image name="tasklist" width="30" height="30"/>
     </resources>
 </document>

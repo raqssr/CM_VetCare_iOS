@@ -54,6 +54,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         performSegue(withIdentifier: segueIdentifiers[indexPath.row], sender: self)
     }
     
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
     /*
     // MARK: - Navigation
