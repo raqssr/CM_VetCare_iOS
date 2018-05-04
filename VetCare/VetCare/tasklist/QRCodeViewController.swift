@@ -53,10 +53,10 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         if metadataObjects != nil && metadataObjects.count != 0{
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject{
                 if object.type == .qr{
-                    let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
+                    let alert = UIAlertController(title: "The animal is: ", message: object.stringValue, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (nil) in
-                        UIPasteboard.general.string = object.stringValue
+                    alert.addAction(UIAlertAction(title: "Go back", style: .default, handler: { (nil) in
+                        _ = self.navigationController?.popViewController(animated: true)
                     }))
                     present(alert, animated: true, completion: nil)
                 }
