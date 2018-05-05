@@ -9,7 +9,11 @@
 import UIKit
 
 class DischargeViewController: UIViewController {
-
+    
+    @IBOutlet weak var weight: UITextField!
+    @IBOutlet weak var veterinarian: UITextField!
+    @IBOutlet weak var observations: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
