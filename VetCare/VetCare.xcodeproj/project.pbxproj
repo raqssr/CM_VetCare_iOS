@@ -10,6 +10,8 @@
 		C700DD978286060FA3CC5E25 /* Pods_VetCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A349BE31A8ED09DE05870C66 /* Pods_VetCare.framework */; };
 		CC0540142094DBDA00C39CC6 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */; };
 		CC0540162094DC9400C39CC6 /* AnimalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */; };
+		CC06903A209E226700CBD8D4 /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069039209E226700CBD8D4 /* SendMessageViewController.swift */; };
+		CC06903C209E227400CBD8D4 /* DischargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC06903B209E227400CBD8D4 /* DischargeViewController.swift */; };
 		CC16DEFD209496E7000E7F09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */; };
 		CC28E562209B3DE200F1ADCE /* MBCalendarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC28E561209B3DE200F1ADCE /* MBCalendarKit.framework */; };
 		CC28E564209B473900F1ADCE /* CalendarUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28E563209B473900F1ADCE /* CalendarUIViewController.swift */; };
@@ -43,6 +45,8 @@
 		C4A551B8F654B57AD40E520D /* Pods-VetCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VetCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VetCare/Pods-VetCare.debug.xcconfig"; sourceTree = "<group>"; };
 		CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
 		CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewCell.swift; sourceTree = "<group>"; };
+		CC069039209E226700CBD8D4 /* SendMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
+		CC06903B209E227400CBD8D4 /* DischargeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DischargeViewController.swift; sourceTree = "<group>"; };
 		CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC28E55F209B3DC200F1ADCE /* MBCalendarKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBCalendarKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC28E561209B3DE200F1ADCE /* MBCalendarKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBCalendarKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				CCD97669209617B800DD29D0 /* ProfileViewController.swift */,
+				CC069039209E226700CBD8D4 /* SendMessageViewController.swift */,
+				CC06903B209E227400CBD8D4 /* DischargeViewController.swift */,
 				CCA7D8CD20990309007F28DA /* historic */,
 				CCA7D8CC20990301007F28DA /* hospitalisation */,
 				CCA7D8CB209902F9007F28DA /* info */,
@@ -397,8 +403,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC0540142094DBDA00C39CC6 /* AnimalsViewController.swift in Sources */,
+				CC06903C209E227400CBD8D4 /* DischargeViewController.swift in Sources */,
 				CC941B402093D1890097EDA9 /* LoginViewController.swift in Sources */,
 				CC389BBF2098CD0400A67F5F /* TaskListTableViewCell.swift in Sources */,
+				CC06903A209E226700CBD8D4 /* SendMessageViewController.swift in Sources */,
 				CCD9766C209617D500DD29D0 /* AddAnimalViewController.swift in Sources */,
 				CC389B992098A5A600A67F5F /* HistoricViewController.swift in Sources */,
 				CC942F7D2097644400CAC241 /* ProfileTableViewCell.swift in Sources */,
