@@ -594,7 +594,6 @@
         <!--Write Message-->
         <scene sceneID="hv2-qx-BfW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mOI-eH-acX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Write Message" id="DSt-AJ-HdG" customClass="SendMessageViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5kM-za-iBJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -642,6 +641,7 @@
                         <outlet property="messageBox" destination="eJR-yI-rQ0" id="URV-Z4-xgD"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mOI-eH-acX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5010" y="-401.40845070422534"/>
         </scene>
