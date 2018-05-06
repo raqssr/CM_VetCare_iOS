@@ -17,8 +17,9 @@ class MainController: UITabBarController, GIDSignInDelegate, GIDSignInUIDelegate
     private let scopes = [kGTLRAuthScopeCalendarReadonly]
     
     private let service = GTLRCalendarService()
-    let signInButton = GIDSignInButton()
-    let output = UITextView()
+    //let signInButton = GIDSignInButton()
+    //let output = UITextView()
+    var calendarEvents = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +32,15 @@ class MainController: UITabBarController, GIDSignInDelegate, GIDSignInUIDelegate
         GIDSignIn.sharedInstance().signInSilently()
         
         // Add the sign-in button.
-        view.addSubview(signInButton)
+        //view.addSubview(signInButton)
         
-        // Add a UITextView to display output.
-        output.frame = view.bounds
-        output.isEditable = false
-        output.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
-        output.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        output.isHidden = true
-        view.addSubview(output);
+//        // Add a UITextView to display output.
+//        output.frame = view.bounds
+//        output.isEditable = false
+//        output.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+//        output.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+//        output.isHidden = true
+//        view.addSubview(output);
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,8 +53,8 @@ class MainController: UITabBarController, GIDSignInDelegate, GIDSignInUIDelegate
             showAlert(title: "Authentication Error", message: error.localizedDescription)
             self.service.authorizer = nil
         } else {
-            self.signInButton.isHidden = true
-            self.output.isHidden = false
+            //self.signInButton.isHidden = true
+            //self.output.isHidden = false
             self.service.authorizer = user.authentication.fetcherAuthorizer()
             fetchEvents()
         }
@@ -92,11 +93,19 @@ class MainController: UITabBarController, GIDSignInDelegate, GIDSignInUIDelegate
                     dateStyle: .short,
                     timeStyle: .short)
                 outputText += "\(startString) - \(event.summary!)\n"
+                calendarEvents.append(outputText)
+                
             }
         } else {
-            outputText = "No upcoming events found."
+            let alertController = UIAlertController(title: "VetCare", message:
+                "No upcoming events found.", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            self.present(alertController, animated: true, completion: nil)
         }
-        output.text = outputText
+        //output.text = outputText
+        for i in calendarEvents{
+            print(i)
+        }
     }
     
     
