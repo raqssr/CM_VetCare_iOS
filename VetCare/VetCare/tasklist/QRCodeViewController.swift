@@ -57,6 +57,8 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
                     alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
                     alert.addAction(UIAlertAction(title: "Go back", style: .default, handler: { (nil) in
                         _ = self.navigationController?.popViewController(animated: true)
+                        //self.tabBarController?.tabBar.isHidden = false
+                        
                     }))
                     present(alert, animated: true, completion: nil)
                 }
