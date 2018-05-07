@@ -63,20 +63,14 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskListTableViewCell
-        print(eventsLoaded)
         if eventsLoaded == true{
-            print("eventos vão ser imprimidos")
             stop()
-            for i in animalsName{
-                print(i)
-            }
             cell.animalName.text = animalsName[indexPath.row]
             cell.task.text = animalsTask[indexPath.row]
             cell.hours.text = hoursTasks[indexPath.row]
             return cell
         }
         else{
-            print("eventos vão ser carregados")
             start()
             cell.animalName.text = " "
             cell.task.text = " "
@@ -157,8 +151,9 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
             animalsTask.append(task)
         }
 
+        let defaults = UserDefaults.standard
+        defaults.set(calendarEvents, forKey: "eventsForCalendar")
         eventsLoaded = true
-        print("eventos já foram todos carregados")
         tableView.reloadData()
     }
     
