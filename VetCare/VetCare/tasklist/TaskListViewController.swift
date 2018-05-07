@@ -16,6 +16,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     var tasks = ["analises", "raio-x", "desinfetar pontos"]
     var hours = ["09:00", "15:00", "17:30"]
     
+    @IBOutlet weak var tableView: UITableView!
+    
     // If modifying these scopes, delete your previously saved credentials by
     // resetting the iOS simulator or uninstall the app.
     private let scopes = [kGTLRAuthScopeCalendarReadonly]
@@ -28,6 +30,9 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     var hoursTasks = [String]()
     var animalsName = [String]()
     var animalsTask = [String]()
+    var eventsLoaded = false
+    
+    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,17 +57,27 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("2")
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskListTableViewCell
-//        cell.animalName.text = animals[indexPath.row]
-//        cell.task.text = tasks[indexPath.row]
-//        cell.hours.text = hours[indexPath.row]
-
-        cell.animalName.text = animals[indexPath.row]
-        cell.task.text = tasks[indexPath.row]
-        cell.hours.text = hours[indexPath.row]
-        
-        return cell
+        print(eventsLoaded)
+        if eventsLoaded == true{
+            print("eventos vão ser imprimidos")
+            stop()
+            for i in animalsName{
+                print(i)
+            }
+            cell.animalName.text = animalsName[indexPath.row]
+            cell.task.text = animalsTask[indexPath.row]
+            cell.hours.text = hoursTasks[indexPath.row]
+            return cell
+        }
+        else{
+            print("eventos vão ser carregados")
+            start()
+            cell.animalName.text = " "
+            cell.task.text = " "
+            cell.hours.text = " "
+            return cell
+        }
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -136,8 +151,10 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
             animalsName.append(String(animalName))
             animalsTask.append(task)
         }
-        
-        print("1")
+
+        eventsLoaded = true
+        print("eventos já foram todos carregados")
+        tableView.reloadData()
     }
     
     // Helper for showing an alert
@@ -154,6 +171,19 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         )
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func start(){
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.startAnimating()
+    }
+    
+    func stop(){
+        activityIndicator.stopAnimating()
     }
 
     /*
