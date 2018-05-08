@@ -59,6 +59,8 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         return cell
     }
+    
+    
 
     /*
     // MARK: - Navigation
