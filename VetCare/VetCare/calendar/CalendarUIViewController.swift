@@ -13,6 +13,11 @@ class CalendarUIViewController: CalendarViewController {
     
     var data : [Date:[CalendarEvent]] = [:]
     
+    var dayTasks = [String]()
+    var monthTasks = [String]()
+    var yearTasks = [String]()
+    var tasksNames = [String]()
+    
     required init?(coder aDecoder: NSCoder) {
         self.data = [:]
         super.init(coder: aDecoder)
@@ -26,30 +31,47 @@ class CalendarUIViewController: CalendarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaults = UserDefaults.standard
-        if let calendarEvents = defaults.array(forKey: "eventsForCalendar") {
-            print(calendarEvents)
-        }
-        
-        print("cheguei ao calendar")
-
-
         // Do any additional setup after loading the view.
         self.delegate = self
         self.dataSource = self
         
-        let title : NSString = NSLocalizedString("Add Swift Demo", comment: "") as NSString
-        if let date : Date = NSDate(day: 1, month: 5, year: 2018) as Date?
-        {
-            let event : CalendarEvent = CalendarEvent(title: title as String, andDate: date, andInfo: nil)
-            self.data[date] = [event]
+        let defaults = UserDefaults.standard
+        let calendarEvents = defaults.object(forKey: "eventsForCalendar") as? [String] ?? [String]()
+        
+        print(calendarEvents)
+        
+        for i in calendarEvents{
+            //ex: 09/05/2018, 14:30 - hello: ghi
+            print(i)
+            var eventInfo = i.split(separator: "-")
+            //09/05/2018, 14:30
+            var timeInfo = eventInfo[0].trimmingCharacters(in: .whitespaces)
+            //hello: ghi
+            var taskInfo = eventInfo[1].trimmingCharacters(in: .whitespaces)
+            var dateTime = timeInfo.split(separator: ",")
+            //09/05/2018
+            var date = dateTime[0]
+            //var time = dateTime[1].trimmingCharacters(in: .whitespaces)
+            var dateTypes = date.split(separator: "/")
+            print(dateTypes)
+            dayTasks.append(String(dateTypes[0]))
+            monthTasks.append(String(dateTypes[1]))
+            yearTasks.append(String(dateTypes[2]))
+            tasksNames.append(taskInfo)
         }
         
-        let title2 : NSString = NSLocalizedString("Release MBCalendarKit 5.0.0", comment: "") as NSString
-        if let date2 : Date = NSDate(day: 20, month: 5, year: 2018) as Date?
-        {
-            let event2 : CalendarEvent = CalendarEvent(title: title2 as String, andDate: date2, andInfo: nil)
-            self.data[date2] = [event2]
+        var counter = 0
+        for i in tasksNames{
+            let title : NSString = NSLocalizedString(tasksNames[counter], comment: "") as NSString
+            if let date : Date = NSDate(day: UInt(dayTasks[counter])!, month: UInt(monthTasks[counter])!, year: UInt(yearTasks[counter])!) as Date?
+            {
+                let event : CalendarEvent = CalendarEvent(title: title as String, andDate: date, andInfo: nil)
+                self.data[date] = [event]
+            }
+            counter += 1
+            if counter == tasksNames.count{
+                counter = 0
+            }
         }
     }
 
