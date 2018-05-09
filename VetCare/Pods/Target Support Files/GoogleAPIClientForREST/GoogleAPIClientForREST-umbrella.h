@@ -29,6 +29,10 @@
 #import "GTLRFramework.h"
 #import "GTLRURITemplate.h"
 #import "GTLRUtilities.h"
+#import "GTLRDrive.h"
+#import "GTLRDriveObjects.h"
+#import "GTLRDriveQuery.h"
+#import "GTLRDriveService.h"
 
 FOUNDATION_EXPORT double GoogleAPIClientForRESTVersionNumber;
 FOUNDATION_EXPORT const unsigned char GoogleAPIClientForRESTVersionString[];

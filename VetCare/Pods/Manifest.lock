@@ -23,6 +23,9 @@ PODS:
     - GTMSessionFetcher (>= 1.1.7)
   - GoogleAPIClientForREST/Core (1.2.1):
     - GTMSessionFetcher (>= 1.1.7)
+  - GoogleAPIClientForREST/Drive (1.2.1):
+    - GoogleAPIClientForREST/Core
+    - GTMSessionFetcher (>= 1.1.7)
   - GoogleSignIn (4.1.2):
     - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
@@ -56,6 +59,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - GoogleAPIClientForREST/Calendar (~> 1.2.1)
+  - GoogleAPIClientForREST/Drive (~> 1.2.1)
   - GoogleSignIn (~> 4.1.1)
   - MBCalendarKit (= 5.0.0)
 
@@ -88,6 +92,6 @@ SPEC CHECKSUMS:
   MBCalendarKit: 95b8e3d751a607954dc2233b1d7fa512ed1f3c51
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: 8d1e0568fd93ebd5d89306ff981f2533ca549ca9
+PODFILE CHECKSUM: e36c87c6285f0d0931549c6bf9bccfcdf229eaaf
 
 COCOAPODS: 1.5.0
