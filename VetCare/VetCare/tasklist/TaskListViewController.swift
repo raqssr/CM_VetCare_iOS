@@ -41,6 +41,10 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // Do any additional setup after loading the view.
         // Configure Google Sign-in.
+        
+        // Initialize Google sign-in.
+        GIDSignIn.sharedInstance().clientID = "1040218745705-lnll051g8m2ji8ftnapopv5nn9no4vrt.apps.googleusercontent.com"
+        
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().scopes = scopes

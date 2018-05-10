@@ -21,8 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //Initialize and configure Firebase. This line of code helps you connect Firebase when your app starts up.
         FirebaseApp.configure()
-        // Initialize Google sign-in.
-        GIDSignIn.sharedInstance().clientID = "1040218745705-lnll051g8m2ji8ftnapopv5nn9no4vrt.apps.googleusercontent.com"
+        
         return true
     }
     

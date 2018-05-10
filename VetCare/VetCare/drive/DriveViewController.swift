@@ -23,9 +23,9 @@ class DriveViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        GIDSignIn.sharedInstance().clientID = "1040218745705-lnll051g8m2ji8ftnapopv5nn9no4vrt.apps.googleusercontent.com"
         // Configure Google Sign-in.
+        GIDSignIn.sharedInstance().clientID = "1040218745705-rvs6iv7727f18q27h77ithjr4g0l3uub.apps.googleusercontent.com"
+
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().scopes = scopes
