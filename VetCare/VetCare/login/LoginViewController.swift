@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginAction(_ sender: Any) {
         
-        if self.emailTextField.text == "" || self.passwordTextField.text == "" {
+        if self.emailTextField.text == "" {
             
             //Alert to tell the user that there was an error because they didn't fill anything in the textfields because they didn't fill anything in
             
@@ -55,10 +55,10 @@ class LoginViewController: UIViewController {
                     
                     //Tells the user that there is an error and then gets firebase to tell them the error
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    
+
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
-                    
+
                     self.present(alertController, animated: true, completion: nil)
                 }
             }

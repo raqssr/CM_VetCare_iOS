@@ -1027,19 +1027,7 @@
                     <view key="view" contentMode="scaleToFill" id="eTY-ee-0bW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Drive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgn-zb-ZpA">
-                                <rect key="frame" x="166" y="323" width="40" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="fgn-zb-ZpA" firstAttribute="centerX" secondItem="u0g-6r-FlK" secondAttribute="centerX" id="EZ1-Q2-GcI"/>
-                            <constraint firstItem="fgn-zb-ZpA" firstAttribute="centerY" secondItem="u0g-6r-FlK" secondAttribute="centerY" id="n9Y-6y-Lgm"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="u0g-6r-FlK"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Documents" image="cloud" id="hk0-9B-9hh"/>
