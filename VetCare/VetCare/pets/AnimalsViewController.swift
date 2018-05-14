@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class AnimalsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class AnimalsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate {
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -17,9 +18,13 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
     let weight = ["11", "12", "7", "10", "8", "15", "13", "20"]
     let owners = ["ana", "joana", "rita", "raquel", "bia", "sofia", "maria", "ines"]
     
+    var locationManager: CLLocationManager!
+    var nameAnimal = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Do any additional setup after loading the view.
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -60,6 +65,69 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
     
+    @IBAction func identifyAnimal(_ sender: Any) {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways {
+            if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
+                if CLLocationManager.isRangingAvailable() {
+                    startScanning()
+                }
+            }
+        }
+    }
+    
+    func startScanning() {
+        let uuid = UUID(uuidString: "c9804b7e-7193-4937-8aa0-71252fb62c59")!
+        nameAnimal = "Benji"
+        let beaconRegion = CLBeaconRegion(proximityUUID: uuid, major: 50, minor: 0, identifier: "cm2018")
+        
+        locationManager.startMonitoring(for: beaconRegion)
+        locationManager.startRangingBeacons(in: beaconRegion)
+    }
+    
+    func update(distance: CLProximity) {
+        UIView.animate(withDuration: 0.8) { [unowned self] in
+            if  distance == .far || distance == .near || distance == .immediate{
+                let alert = UIAlertController(title: "The animal is:", message: self.nameAnimal, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true)
+            }
+//            switch distance {
+//            case .unknown:
+//                self.view.backgroundColor = UIColor.gray
+//                self.distanceReading.text = "UNKNOWN"
+//
+//            case .far:
+//                self.view.backgroundColor = UIColor.blue
+//                self.distanceReading.text = "FAR"
+//
+//            case .near:
+//                self.view.backgroundColor = UIColor.orange
+//                self.distanceReading.text = "NEAR"
+//
+//            case .immediate:
+//                self.view.backgroundColor = UIColor.red
+//                self.distanceReading.text = "RIGHT HERE"
+//            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+        if beacons.count > 0 {
+            let beacon = beacons[0]
+            update(distance: beacon.proximity)
+        } else {
+            update(distance: .unknown)
+        }
+    }
 
     /*
     // MARK: - Navigation

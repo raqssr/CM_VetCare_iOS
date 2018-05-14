@@ -7,76 +7,21 @@
 //
 
 import UIKit
-import CoreLocation
 
-class IdentifyAnimalViewController: UIViewController, CLLocationManagerDelegate {
+class IdentifyAnimalViewController: UIViewController {
     
-    @IBOutlet weak var distanceReading: UILabel!
-    var locationManager: CLLocationManager!
+    //var beaconManager: KTKBeaconManager!    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
         
-        view.backgroundColor = UIColor.gray
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedAlways {
-            if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
-                if CLLocationManager.isRangingAvailable() {
-                    startScanning()
-                }
-            }
-        }
-    }
-    
-    func startScanning() {
-        let uuid = UUID(uuidString: "c9804b7e-7193-4937-8aa0-71252fb62c59")!
-        let beaconRegion = CLBeaconRegion(proximityUUID: uuid, major: 50, minor: 0, identifier: "cm2018")
-        
-        locationManager.startMonitoring(for: beaconRegion)
-        locationManager.startRangingBeacons(in: beaconRegion)
-    }
-    
-    func update(distance: CLProximity) {
-        UIView.animate(withDuration: 0.8) { [unowned self] in
-            switch distance {
-            case .unknown:
-                self.view.backgroundColor = UIColor.gray
-                self.distanceReading.text = "UNKNOWN"
-                
-            case .far:
-                self.view.backgroundColor = UIColor.blue
-                self.distanceReading.text = "FAR"
-                
-            case .near:
-                self.view.backgroundColor = UIColor.orange
-                self.distanceReading.text = "NEAR"
-                
-            case .immediate:
-                self.view.backgroundColor = UIColor.red
-                self.distanceReading.text = "RIGHT HERE"
-            }
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        if beacons.count > 0 {
-            let beacon = beacons[0]
-            update(distance: beacon.proximity)
-        } else {
-            update(distance: .unknown)
-        }
     }
     
 

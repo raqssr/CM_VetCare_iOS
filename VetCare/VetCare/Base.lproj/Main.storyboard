@@ -40,7 +40,7 @@
                                             <barButtonItem image="beacon" id="lUP-jH-iVv">
                                                 <color key="tintColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <segue destination="2t6-qr-0Uz" kind="show" id="aJ1-tL-Xjx"/>
+                                                    <action selector="identifyAnimal:" destination="vGt-n6-hB7" id="f4Y-sF-n9e"/>
                                                 </connections>
                                             </barButtonItem>
                                         </rightBarButtonItems>
@@ -1347,36 +1347,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yVK-0t-RuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1206" y="-1312"/>
-        </scene>
-        <!--Identify Animal View Controller-->
-        <scene sceneID="6K3-sh-ZrJ">
-            <objects>
-                <viewController id="2t6-qr-0Uz" customClass="IdentifyAnimalViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Pk6-e5-tdd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4W-ah-JzV">
-                                <rect key="frame" x="139" y="283.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="W4W-ah-JzV" firstAttribute="centerX" secondItem="FnW-ge-HzW" secondAttribute="centerX" id="2lf-Ct-u5N"/>
-                            <constraint firstItem="W4W-ah-JzV" firstAttribute="centerY" secondItem="FnW-ge-HzW" secondAttribute="centerY" id="LKi-su-jT4"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="FnW-ge-HzW"/>
-                    </view>
-                    <connections>
-                        <outlet property="distanceReading" destination="W4W-ah-JzV" id="JRa-vO-UaU"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a1Y-et-xsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1490.625" y="-620.07042253521126"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="dQL-p2-w2G">
