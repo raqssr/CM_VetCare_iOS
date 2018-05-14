@@ -17,32 +17,47 @@ class VitalSignsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "Filled Line Chart"
+        self.title = "Vital Signs"
         
         chartView.delegate = self as? ChartViewDelegate
         
-        chartView.backgroundColor = .white
-        chartView.gridBackgroundColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 150/255)
-        chartView.drawGridBackgroundEnabled = true
-        
-        chartView.drawBordersEnabled = true
-        
         chartView.chartDescription?.enabled = false
-        
-        chartView.pinchZoomEnabled = false
         chartView.dragEnabled = true
         chartView.setScaleEnabled(true)
+        chartView.pinchZoomEnabled = true
         
-        chartView.legend.enabled = false
+        let l = chartView.legend
+        l.form = .line
+        l.font = UIFont(name: "HelveticaNeue-Light", size: 11)!
+        l.textColor = .black
+        l.horizontalAlignment = .left
+        l.verticalAlignment = .bottom
+        l.orientation = .horizontal
+        l.drawInside = false
         
-        chartView.xAxis.enabled = false
+        let xAxis = chartView.xAxis
+        xAxis.labelFont = .systemFont(ofSize: 11)
+        xAxis.labelTextColor = .black
+        xAxis.drawAxisLineEnabled = false
+        xAxis.axisMaximum = 24
+        xAxis.axisMinimum = 0
         
         let leftAxis = chartView.leftAxis
-        leftAxis.axisMaximum = 900
-        leftAxis.axisMinimum = -250
-        leftAxis.drawAxisLineEnabled = false
+        leftAxis.labelTextColor = UIColor.black
+        leftAxis.axisMaximum = 110
+        leftAxis.axisMinimum = 10
+        leftAxis.drawGridLinesEnabled = true
+        leftAxis.granularityEnabled = true
         
-        chartView.rightAxis.enabled = false
+        let rightAxis = chartView.rightAxis
+        rightAxis.enabled = false
+        
+        chartView.animate(xAxisDuration: 1.5)
+        
+        chartView.backgroundColor = UIColor.white
+        
+        self.setDataCount(Int(25), range: UInt32(30))
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,51 +66,47 @@ class VitalSignsViewController: UIViewController {
     }
     
     func setDataCount(_ count: Int, range: UInt32) {
+        //Heart beatings
         let yVals1 = (0..<count).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(range) + 50)
-            return ChartDataEntry(x: Double(i), y: val)
-        }
-        let yVals2 = (0..<count).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(range) + 450)
+            let val = Double(arc4random_uniform(100-60) + 60)
             return ChartDataEntry(x: Double(i), y: val)
         }
         
-        let set1 = LineChartDataSet(values: yVals1, label: "DataSet 1")
+        //Temperature
+        let yVals2 = (0..<count).map { (i) -> ChartDataEntry in
+            let val = Double(arc4random_uniform(40-20) + 20)
+            return ChartDataEntry(x: Double(i), y: val)
+        }
+        
+        let set1 = LineChartDataSet(values: yVals1, label: "Heart Beatings (per minute)")
         set1.axisDependency = .left
-        set1.setColor(UIColor(red: 255/255, green: 241/255, blue: 46/255, alpha: 1))
-        set1.drawCirclesEnabled = false
+        set1.setColor(UIColor.red)
+        set1.setCircleColor(.black)
         set1.lineWidth = 2
         set1.circleRadius = 3
-        set1.fillAlpha = 1
-        set1.drawFilledEnabled = true
-        set1.fillColor = .white
-        set1.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        set1.fillAlpha = 65/255
+        set1.fillColor = UIColor.red
+        set1.highlightColor = UIColor.red
         set1.drawCircleHoleEnabled = false
-        set1.fillFormatter = DefaultFillFormatter { _,_  -> CGFloat in
-            return CGFloat(self.chartView.leftAxis.axisMinimum)
-        }
         
-        let set2 = LineChartDataSet(values: yVals2, label: "DataSet 2")
+        let set2 = LineChartDataSet(values: yVals2, label: "Temperature (ºC)")
         set2.axisDependency = .left
-        set2.setColor(UIColor(red: 255/255, green: 241/255, blue: 46/255, alpha: 1))
-        set2.drawCirclesEnabled = false
+        set2.setColor(UIColor.init(red: 0/255, green: 102/255, blue: 204/255, alpha: 1))
+        set2.setCircleColor(.black)
         set2.lineWidth = 2
         set2.circleRadius = 3
-        set2.fillAlpha = 1
-        set2.drawFilledEnabled = true
-        set2.fillColor = .white
-        set2.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        set2.fillAlpha = 65/255
+        set2.fillColor = UIColor.blue
+        set2.highlightColor = UIColor.blue
         set2.drawCircleHoleEnabled = false
-        set2.fillFormatter = DefaultFillFormatter { _,_  -> CGFloat in
-            return CGFloat(self.chartView.leftAxis.axisMaximum)
-        }
         
         let data = LineChartData(dataSets: [set1, set2])
-        data.setDrawValues(false)
+        data.setValueTextColor(.black)
+        data.setValueFont(.systemFont(ofSize: 9))
         
         chartView.data = data
     }
-    
+}
 
     /*
     // MARK: - Navigation
@@ -106,5 +117,3 @@ class VitalSignsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-}
