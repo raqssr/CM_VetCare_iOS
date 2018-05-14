@@ -43,6 +43,10 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Can I use the bluetooth to identify the animal?</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location will be used to search for the beacon.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Can I use the camera?</string>
 	<key>UILaunchStoryboardName</key>

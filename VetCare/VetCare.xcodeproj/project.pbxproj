@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C700DD978286060FA3CC5E25 /* Pods_VetCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A349BE31A8ED09DE05870C66 /* Pods_VetCare.framework */; };
+		CC02E66F20A8EC4D007CC3C0 /* VitalSignsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC02E66E20A8EC4D007CC3C0 /* VitalSignsViewController.swift */; };
 		CC0540142094DBDA00C39CC6 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */; };
 		CC0540162094DC9400C39CC6 /* AnimalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */; };
 		CC06903A209E226700CBD8D4 /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC069039209E226700CBD8D4 /* SendMessageViewController.swift */; };
@@ -36,6 +37,7 @@
 		CCAE2CA82091DC780013A6BE /* VetCare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CCAE2CA62091DC780013A6BE /* VetCare.xcdatamodeld */; };
 		CCAE2CAD2091DC7A0013A6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAE2CAB2091DC7A0013A6BE /* LaunchScreen.storyboard */; };
 		CCAE2CB52091E22A0013A6BE /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE2CB42091E22A0013A6BE /* MainController.swift */; };
+		CCCB370B20A786BC0029F410 /* IdentifyAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB370A20A786BC0029F410 /* IdentifyAnimalViewController.swift */; };
 		CCD976682096052300DD29D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCD976672096052300DD29D0 /* Assets.xcassets */; };
 		CCD9766A209617B800DD29D0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD97669209617B800DD29D0 /* ProfileViewController.swift */; };
 		CCD9766C209617D500DD29D0 /* AddAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */; };
@@ -44,6 +46,7 @@
 /* Begin PBXFileReference section */
 		A349BE31A8ED09DE05870C66 /* Pods_VetCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VetCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A551B8F654B57AD40E520D /* Pods-VetCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VetCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VetCare/Pods-VetCare.debug.xcconfig"; sourceTree = "<group>"; };
+		CC02E66E20A8EC4D007CC3C0 /* VitalSignsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalSignsViewController.swift; sourceTree = "<group>"; };
 		CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
 		CC0540152094DC9400C39CC6 /* AnimalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewCell.swift; sourceTree = "<group>"; };
 		CC069039209E226700CBD8D4 /* SendMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 		CCAE2CAC2091DC7A0013A6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCAE2CAE2091DC7A0013A6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCAE2CB42091E22A0013A6BE /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		CCCB370A20A786BC0029F410 /* IdentifyAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyAnimalViewController.swift; sourceTree = "<group>"; };
 		CCD976672096052300DD29D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCD97669209617B800DD29D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimalViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 			children = (
 				CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */,
 				CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */,
+				CCCB370A20A786BC0029F410 /* IdentifyAnimalViewController.swift */,
+				CC02E66E20A8EC4D007CC3C0 /* VitalSignsViewController.swift */,
 				CCA7D8C9209902AA007F28DA /* profile */,
 				CCA7D8C82099028B007F28DA /* cells */,
 			);
@@ -390,19 +396,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VetCare/Pods-VetCare-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${PODS_ROOT}/KontaktSDK/Cocoapods/iOS/KontaktSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KontaktSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -444,8 +454,10 @@
 				CCD9766C209617D500DD29D0 /* AddAnimalViewController.swift in Sources */,
 				CC389B992098A5A600A67F5F /* HistoricViewController.swift in Sources */,
 				CC942F7D2097644400CAC241 /* ProfileTableViewCell.swift in Sources */,
+				CC02E66F20A8EC4D007CC3C0 /* VitalSignsViewController.swift in Sources */,
 				CC0540162094DC9400C39CC6 /* AnimalViewCell.swift in Sources */,
 				CC389BB82098B68400A67F5F /* ProcedureTableViewCell.swift in Sources */,
+				CCCB370B20A786BC0029F410 /* IdentifyAnimalViewController.swift in Sources */,
 				CC389B952098A57B00A67F5F /* GeneralInfoViewController.swift in Sources */,
 				CC389BAE2098B60300A67F5F /* GeneralTableViewCell.swift in Sources */,
 				CC28E564209B473900F1ADCE /* CalendarUIViewController.swift in Sources */,

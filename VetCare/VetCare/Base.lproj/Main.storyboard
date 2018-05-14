@@ -30,12 +30,20 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Animals" id="wcd-7V-MYT">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="T6W-Ji-iz0">
-                                            <color key="tintColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <segue destination="nAF-EA-paA" kind="presentation" id="u4W-ff-BFd"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem systemItem="add" id="T6W-Ji-iz0">
+                                                <color key="tintColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <segue destination="nAF-EA-paA" kind="presentation" id="u4W-ff-BFd"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem image="beacon" id="lUP-jH-iVv">
+                                                <color key="tintColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <segue destination="2t6-qr-0Uz" kind="show" id="aJ1-tL-Xjx"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -368,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85l-E7-9J6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3581" y="-401"/>
+            <point key="canvasLocation" x="3801" y="-401"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="CC5-b3-tQ3">
@@ -542,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDY-KR-LTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3229" y="359"/>
+            <point key="canvasLocation" x="3501" y="495"/>
         </scene>
         <!--Discharge Animal-->
         <scene sceneID="21E-tZ-h3Y">
@@ -728,7 +736,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7t8-Lj-uxB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2606" y="1158"/>
+            <point key="canvasLocation" x="2993" y="1347"/>
         </scene>
         <!--Hospitalisation-->
         <scene sceneID="LTj-ku-tXq">
@@ -779,7 +787,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1p8-Mu-1Xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3893" y="1158"/>
+            <point key="canvasLocation" x="3891" y="1347"/>
         </scene>
         <!--General Information-->
         <scene sceneID="IDC-Zc-VHj">
@@ -1018,7 +1026,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h44-uO-3QS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5010" y="540"/>
+            <point key="canvasLocation" x="4609" y="794"/>
         </scene>
         <!--Documents-->
         <scene sceneID="tdn-bA-PoN">
@@ -1121,7 +1129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6GO-V8-0OH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1980" y="-1205.2816901408451"/>
+            <point key="canvasLocation" x="2096" y="-1313"/>
         </scene>
         <!--Code View Controller-->
         <scene sceneID="ysn-DJ-fsq">
@@ -1152,7 +1160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkj-OU-r40" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2993" y="-1205"/>
+            <point key="canvasLocation" x="3019" y="-1313"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="a1p-ok-Qjm">
@@ -1250,32 +1258,20 @@
             </objects>
             <point key="canvasLocation" x="-209" y="121"/>
         </scene>
-        <!--View Controller-->
+        <!--Vital Signs View Controller-->
         <scene sceneID="VdB-fO-gsd">
             <objects>
-                <viewController id="DVe-of-yiD" sceneMemberID="viewController">
+                <viewController id="DVe-of-yiD" customClass="VitalSignsViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PP6-Cw-5Qe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aqui vai estar um gráfico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBB-75-exy">
-                                <rect key="frame" x="66" y="283.5" width="188" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="SBB-75-exy" firstAttribute="centerY" secondItem="kWk-ga-pn3" secondAttribute="centerY" id="6NP-q0-NQb"/>
-                            <constraint firstItem="SBB-75-exy" firstAttribute="centerX" secondItem="kWk-ga-pn3" secondAttribute="centerX" id="aCd-mN-xUX"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kWk-ga-pn3"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1P-of-d4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1491" y="-512"/>
+            <point key="canvasLocation" x="2186" y="-258"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1mB-ua-pti">
@@ -1299,7 +1295,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xp-Kf-aER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2694" y="-401"/>
+            <point key="canvasLocation" x="2843" y="148"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gtF-jZ-OCf">
@@ -1324,7 +1320,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eU3-RV-OtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2213" y="360"/>
+            <point key="canvasLocation" x="1491" y="514"/>
         </scene>
         <!--Task List-->
         <scene sceneID="piP-ka-pu2">
@@ -1350,7 +1346,37 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yVK-0t-RuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="982.5" y="-1205.2816901408451"/>
+            <point key="canvasLocation" x="1206" y="-1312"/>
+        </scene>
+        <!--Identify Animal View Controller-->
+        <scene sceneID="6K3-sh-ZrJ">
+            <objects>
+                <viewController id="2t6-qr-0Uz" customClass="IdentifyAnimalViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pk6-e5-tdd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4W-ah-JzV">
+                                <rect key="frame" x="139" y="283.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W4W-ah-JzV" firstAttribute="centerX" secondItem="FnW-ge-HzW" secondAttribute="centerX" id="2lf-Ct-u5N"/>
+                            <constraint firstItem="W4W-ah-JzV" firstAttribute="centerY" secondItem="FnW-ge-HzW" secondAttribute="centerY" id="LKi-su-jT4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FnW-ge-HzW"/>
+                    </view>
+                    <connections>
+                        <outlet property="distanceReading" destination="W4W-ah-JzV" id="JRa-vO-UaU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a1Y-et-xsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1490.625" y="-620.07042253521126"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="dQL-p2-w2G">
@@ -1381,6 +1407,7 @@
     </scenes>
     <resources>
         <image name="animal" width="30" height="30"/>
+        <image name="beacon" width="30" height="30"/>
         <image name="calendar" width="30" height="30"/>
         <image name="cloud" width="30" height="30"/>
         <image name="heart-rate" width="29" height="30"/>
