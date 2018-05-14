@@ -106,7 +106,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title=" "/>
                                                     <connections>
-                                                        <segue destination="DVe-of-yiD" kind="show" id="vE6-oL-T9c"/>
+                                                        <segue destination="CIG-aJ-QCc" kind="show" id="vE6-oL-T9c"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -376,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85l-E7-9J6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3801" y="-401"/>
+            <point key="canvasLocation" x="4798.125" y="-401.40845070422534"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="CC5-b3-tQ3">
@@ -550,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDY-KR-LTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3501" y="495"/>
+            <point key="canvasLocation" x="3293" y="450"/>
         </scene>
         <!--Discharge Animal-->
         <scene sceneID="21E-tZ-h3Y">
@@ -614,7 +614,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDv-2X-ge4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5753" y="17"/>
+            <point key="canvasLocation" x="5524" y="580"/>
         </scene>
         <!--Write Message-->
         <scene sceneID="hv2-qx-BfW">
@@ -668,7 +668,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOI-eH-acX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5010" y="-401.40845070422534"/>
+            <point key="canvasLocation" x="5910" y="-146"/>
         </scene>
         <!--Animal's Record-->
         <scene sceneID="tn6-Yy-M9k">
@@ -1026,7 +1026,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h44-uO-3QS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4609" y="794"/>
+            <point key="canvasLocation" x="4744" y="1039"/>
         </scene>
         <!--Documents-->
         <scene sceneID="tdn-bA-PoN">
@@ -1258,20 +1258,38 @@
             </objects>
             <point key="canvasLocation" x="-209" y="121"/>
         </scene>
-        <!--Vital Signs View Controller-->
+        <!--Vital Signs-->
         <scene sceneID="VdB-fO-gsd">
             <objects>
                 <viewController id="DVe-of-yiD" customClass="VitalSignsViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PP6-Cw-5Qe">
+                    <view key="view" contentMode="scaleToFill" id="PP6-Cw-5Qe" customClass="LineChartView" customModule="Charts">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iku-eL-29J" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Iku-eL-29J" firstAttribute="trailing" secondItem="kWk-ga-pn3" secondAttribute="trailing" id="ZOB-dR-0I2"/>
+                            <constraint firstItem="Iku-eL-29J" firstAttribute="top" secondItem="kWk-ga-pn3" secondAttribute="top" id="cyy-YJ-Xg9"/>
+                            <constraint firstItem="Iku-eL-29J" firstAttribute="bottom" secondItem="kWk-ga-pn3" secondAttribute="bottom" id="mVK-dR-Ywe"/>
+                            <constraint firstItem="Iku-eL-29J" firstAttribute="leading" secondItem="kWk-ga-pn3" secondAttribute="leading" id="nhT-u8-HoJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kWk-ga-pn3"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Vital Signs" id="724-ov-hpI">
+                        <barButtonItem key="backBarButtonItem" title=" " id="wIz-P0-gp7"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="chartView" destination="Iku-eL-29J" id="VS7-Dk-eWs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1P-of-d4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2186" y="-258"/>
+            <point key="canvasLocation" x="2409.375" y="-597.88732394366195"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1mB-ua-pti">
@@ -1295,7 +1313,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xp-Kf-aER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2843" y="148"/>
+            <point key="canvasLocation" x="3294" y="-269"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gtF-jZ-OCf">
@@ -1320,7 +1338,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eU3-RV-OtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1491" y="514"/>
+            <point key="canvasLocation" x="2094" y="451"/>
         </scene>
         <!--Task List-->
         <scene sceneID="piP-ka-pu2">
@@ -1373,6 +1391,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13g-il-4Ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="872" y="1158"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OP2-s5-TeZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CIG-aJ-QCc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fR9-l9-u95">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.1333333333" green="0.56862745100000001" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.1333333333" green="0.56862745100000001" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DVe-of-yiD" kind="relationship" relationship="rootViewController" id="Onn-N2-Vf9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s3b-Fb-PMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1491" y="-596"/>
         </scene>
     </scenes>
     <resources>

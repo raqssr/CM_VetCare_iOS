@@ -16,6 +16,7 @@
 		CC16DEFD209496E7000E7F09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC16DEFC209496E7000E7F09 /* GoogleService-Info.plist */; };
 		CC28E562209B3DE200F1ADCE /* MBCalendarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC28E561209B3DE200F1ADCE /* MBCalendarKit.framework */; };
 		CC28E564209B473900F1ADCE /* CalendarUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28E563209B473900F1ADCE /* CalendarUIViewController.swift */; };
+		CC29F28820AA298B00A78D80 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC29F28720AA298B00A78D80 /* Charts.framework */; };
 		CC389B952098A57B00A67F5F /* GeneralInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B942098A57B00A67F5F /* GeneralInfoViewController.swift */; };
 		CC389B972098A59600A67F5F /* HospitalisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B962098A59600A67F5F /* HospitalisationViewController.swift */; };
 		CC389B992098A5A600A67F5F /* HistoricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B982098A5A600A67F5F /* HistoricViewController.swift */; };
@@ -55,6 +56,7 @@
 		CC28E55F209B3DC200F1ADCE /* MBCalendarKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBCalendarKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC28E561209B3DE200F1ADCE /* MBCalendarKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBCalendarKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC28E563209B473900F1ADCE /* CalendarUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUIViewController.swift; sourceTree = "<group>"; };
+		CC29F28720AA298B00A78D80 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC389B942098A57B00A67F5F /* GeneralInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralInfoViewController.swift; sourceTree = "<group>"; };
 		CC389B962098A59600A67F5F /* HospitalisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalisationViewController.swift; sourceTree = "<group>"; };
 		CC389B982098A5A600A67F5F /* HistoricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC29F28820AA298B00A78D80 /* Charts.framework in Frameworks */,
 				CC28E562209B3DE200F1ADCE /* MBCalendarKit.framework in Frameworks */,
 				C700DD978286060FA3CC5E25 /* Pods_VetCare.framework in Frameworks */,
 			);
@@ -102,11 +105,20 @@
 		3D28D4FE5C41EAF39E645C53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC29F28720AA298B00A78D80 /* Charts.framework */,
 				CC28E561209B3DE200F1ADCE /* MBCalendarKit.framework */,
 				CC28E55F209B3DC200F1ADCE /* MBCalendarKit.framework */,
 				A349BE31A8ED09DE05870C66 /* Pods_VetCare.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC29F28920AA29EE00A78D80 /* vitalsigns */ = {
+			isa = PBXGroup;
+			children = (
+				CC02E66E20A8EC4D007CC3C0 /* VitalSignsViewController.swift */,
+			);
+			path = vitalsigns;
 			sourceTree = "<group>";
 		};
 		CC512E5020A30AA300A35FEC /* drive */ = {
@@ -147,8 +159,8 @@
 				CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */,
 				CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */,
 				CCCB370A20A786BC0029F410 /* IdentifyAnimalViewController.swift */,
-				CC02E66E20A8EC4D007CC3C0 /* VitalSignsViewController.swift */,
 				CCA7D8C9209902AA007F28DA /* profile */,
+				CC29F28920AA29EE00A78D80 /* vitalsigns */,
 				CCA7D8C82099028B007F28DA /* cells */,
 			);
 			path = pets;
