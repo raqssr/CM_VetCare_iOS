@@ -1282,7 +1282,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Vital Signs" id="724-ov-hpI">
                         <barButtonItem key="backBarButtonItem" title=" " id="wIz-P0-gp7"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="tku-Rc-4xX">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="tku-Rc-4xX">
                             <color key="tintColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="goBackVitalSigns:" destination="DVe-of-yiD" id="CDU-2l-Yu2"/>
@@ -1425,6 +1425,7 @@
     </scenes>
     <resources>
         <image name="animal" width="30" height="30"/>
+        <image name="back" width="36" height="36"/>
         <image name="beacon" width="30" height="30"/>
         <image name="calendar" width="30" height="30"/>
         <image name="cloud" width="30" height="30"/>
