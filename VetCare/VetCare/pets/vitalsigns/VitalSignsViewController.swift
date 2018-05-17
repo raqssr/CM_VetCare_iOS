@@ -19,6 +19,9 @@ class VitalSignsViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.title = "Vital Signs"
         
+        var navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.barTintColor = UIColor.white
+
         chartView.delegate = self as? ChartViewDelegate
         
         chartView.chartDescription?.enabled = false
@@ -106,6 +109,11 @@ class VitalSignsViewController: UIViewController {
         
         chartView.data = data
     }
+    
+    @IBAction func goBackVitalSigns(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
     /*
