@@ -53,7 +53,6 @@ class CalendarUIViewController: CalendarViewController {
             var date = dateTime[0]
             //var time = dateTime[1].trimmingCharacters(in: .whitespaces)
             var dateTypes = date.split(separator: "/")
-            print(dateTypes)
             dayTasks.append(String(dateTypes[0]))
             monthTasks.append(String(dateTypes[1]))
             yearTasks.append(String(dateTypes[2]))
@@ -61,12 +60,22 @@ class CalendarUIViewController: CalendarViewController {
         }
         
         var counter = 0
+        var lastDate = ""
+        var dateFormatted = ""
         for i in tasksNames{
             let title : NSString = NSLocalizedString(tasksNames[counter], comment: "") as NSString
-            if let date : Date = NSDate(day: UInt(dayTasks[counter])!, month: UInt(monthTasks[counter])!, year: UInt(yearTasks[counter])!) as Date?
+            if let date : Date = NSDate(day: UInt(dayTasks[counter])!, month: UInt(monthTasks[counter])!, year: 2018) as Date?
             {
-                let event : CalendarEvent = CalendarEvent(title: title as String, andDate: date, andInfo: nil)
-                self.data[date] = [event]
+                dateFormatted = dayTasks[counter] + "/" + monthTasks[counter] + "/" + "201ß"
+                if String(dateFormatted) == String(lastDate){
+                    let event : CalendarEvent = CalendarEvent(title: title as String, andDate: date, andInfo: nil)
+                    self.data[date] = self.data[date]! + [event]
+                }
+                else{
+                    let event : CalendarEvent = CalendarEvent(title: title as String, andDate: date, andInfo: nil)
+                    self.data[date] = [event]
+                }
+                lastDate = dateFormatted
             }
             counter += 1
             if counter == tasksNames.count{
@@ -105,7 +114,6 @@ class CalendarUIViewController: CalendarViewController {
     
     // A row was selected in the events table. (Use this to push a details view or whatever.)
     override func calendarView(_ calendarView: CalendarView, didSelect event: CalendarEvent) {
-        
     }
 
     /*

@@ -40,10 +40,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // Do any additional setup after loading the view.
         // Configure Google Sign-in.
-        
-        // Initialize Google sign-in.
         GIDSignIn.sharedInstance().clientID = "1040218745705-lnll051g8m2ji8ftnapopv5nn9no4vrt.apps.googleusercontent.com"
-        
+        // Initialize Google sign-in.
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().scopes = scopes
@@ -66,7 +64,16 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
             return 0
         }
         else{
-            return animalsName.count
+            if animalsName.count == 0{
+                stop()
+                let alert = UIAlertController(title: "Task List", message: "There are no tasks for today!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                return 0
+            }
+            else{
+                return animalsName.count
+            }
         }
     }
     
@@ -143,7 +150,11 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
             self.present(alertController, animated: true, completion: nil)
         }
-        //output.text = outputText
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        let currentDate = formatter.string(from: Date())
+        
         for i in calendarEvents{
             var eventInfo = i.split(separator: "-")
             var timeInfo = eventInfo[0].trimmingCharacters(in: .whitespaces)
@@ -154,10 +165,12 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
             var animalTask = taskInfo.split(separator: ":")
             var animalName = animalTask[0]
             var task = animalTask[1].trimmingCharacters(in: .whitespaces)
-            dates.append(String(date))
-            hoursTasks.append(time)
-            animalsName.append(String(animalName))
-            animalsTask.append(task)
+            if String(currentDate) == String(date){
+                dates.append(String(date))
+                hoursTasks.append(time)
+                animalsName.append(String(animalName))
+                animalsTask.append(task)
+            }
         }
         
         let defaults = UserDefaults.standard
