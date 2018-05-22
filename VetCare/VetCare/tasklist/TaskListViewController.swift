@@ -22,8 +22,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     private let scopes = [kGTLRAuthScopeCalendarReadonly]
     
     private let service = GTLRCalendarService()
-    //let signInButton = GIDSignInButton()
-    //let output = UITextView()
+
     var calendarEvents = [String]()
     var dates = [String]()
     var hoursTasks = [String]()
@@ -39,8 +38,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         self.tabBarController?.tabBar.isHidden = false
         
         // Do any additional setup after loading the view.
-        // Configure Google Sign-in.
-        GIDSignIn.sharedInstance().clientID = "1040218745705-lnll051g8m2ji8ftnapopv5nn9no4vrt.apps.googleusercontent.com"
+
         // Initialize Google sign-in.
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -97,11 +95,10 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
+            print("vai dar merda")
             showAlert(title: "Authentication Error", message: error.localizedDescription)
             self.service.authorizer = nil
         } else {
-            //self.signInButton.isHidden = true
-            //self.output.isHidden = false
             self.service.authorizer = user.authentication.fetcherAuthorizer()
             fetchEvents()
         }
