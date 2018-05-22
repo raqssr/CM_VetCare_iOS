@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class AnimalsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate {
     
@@ -18,8 +19,15 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
     let weight = ["11", "12", "7", "10", "8", "15", "13", "20"]
     let owners = ["ana", "joana", "rita", "raquel", "bia", "sofia", "maria", "ines"]
     
+    var animalsNames = [String]()
+    var animalsWeight = [Double]()
+    var animalsOwners = [String]()
+    var animalsImages = [NSData]()
+    
     var locationManager: CLLocationManager!
     var nameAnimal = ""
+    
+    var readData = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +35,10 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
         // Do any additional setup after loading the view.
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        readData = false
+        
+        initDate()
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,16 +47,21 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return animals.count
+        if readData == false{
+            return 0
+        }
+        else{
+            return animalsNames.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "animalViewCell", for: indexPath) as! AnimalViewCell
         
-        cell.animalImage.image = UIImage(named: animals[indexPath.row])
-        cell.animalName.text = animals[indexPath.row].capitalized
-        cell.animalWeight.text = weight[indexPath.row]
-        cell.animalOwner.text = owners[indexPath.row].capitalized
+        cell.animalImage.image = UIImage(data: animalsImages[indexPath.row] as Data)
+        cell.animalName.text = animalsNames[indexPath.row].capitalized
+        cell.animalWeight.text = String(animalsWeight[indexPath.row])
+        cell.animalOwner.text = animalsOwners[indexPath.row].capitalized
         
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true;
@@ -100,23 +117,6 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
                 
                 self.present(alert, animated: true)
             }
-//            switch distance {
-//            case .unknown:
-//                self.view.backgroundColor = UIColor.gray
-//                self.distanceReading.text = "UNKNOWN"
-//
-//            case .far:
-//                self.view.backgroundColor = UIColor.blue
-//                self.distanceReading.text = "FAR"
-//
-//            case .near:
-//                self.view.backgroundColor = UIColor.orange
-//                self.distanceReading.text = "NEAR"
-//
-//            case .immediate:
-//                self.view.backgroundColor = UIColor.red
-//                self.distanceReading.text = "RIGHT HERE"
-//            }
         }
     }
     
@@ -128,6 +128,28 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
             update(distance: .unknown)
         }
     }
+    
+    func initDate(){
+        let fetchRequest:NSFetchRequest<Animal> = Animal.fetchRequest()
+        do{
+            let searchResults = try PersistenceService.getContext().fetch(fetchRequest)
+            print("number of results: \(searchResults.count)")
+            
+            for result in searchResults as [Animal]{
+                animalsNames.append(result.name!)
+                animalsWeight.append(result.weight)
+                animalsOwners.append((result.owner?.name)!)
+                animalsImages.append(result.image!)
+            }
+            readData = true
+            collectionView.reloadData()
+        }
+        catch{
+            print("Error: \(error)")
+        }
+    }
+    
+    
 
     /*
     // MARK: - Navigation
