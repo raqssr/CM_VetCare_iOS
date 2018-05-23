@@ -403,7 +403,7 @@
         <!--Profile-->
         <scene sceneID="sZs-6P-C8Y">
             <objects>
-                <viewController id="ibu-2y-Tp7" customClass="ProfileViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ibu-2y-Tp7" customClass="ProfileViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OqG-hm-DOZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -548,6 +548,9 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="animalDobLabel" destination="mk3-ck-lyd" id="jKT-bC-z5a"/>
+                        <outlet property="animalNameLabel" destination="7NE-b1-YLG" id="mTh-cD-bDS"/>
+                        <outlet property="animalOwnerLabel" destination="3b8-gc-dc2" id="udV-Zx-wBb"/>
                         <outlet property="photo" destination="NPK-kF-s3k" id="3vs-Gy-53W"/>
                         <segue destination="ZsF-RQ-dzj" kind="show" identifier="generalInfo" id="ttJ-6A-Dfd"/>
                         <segue destination="2an-gi-VIR" kind="show" identifier="hospitalisation" id="VBQ-Q6-xcb"/>

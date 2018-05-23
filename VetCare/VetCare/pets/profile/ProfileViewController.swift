@@ -11,14 +11,25 @@ import UIKit
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var animalNameLabel: UILabel!
+    @IBOutlet weak var animalDobLabel: UILabel!
+    @IBOutlet weak var animalOwnerLabel: UILabel!
     
     let images = ["info", "hospitalisation", "historic"]
     let options = ["General Information", "Hospitalisation", "Animal's Record"]
     let segueIdentifiers = ["generalInfo", "hospitalisation", "historic"]
     
+    var animalImage = UIImage()
+    var name = String()
+    var animalDob = String()
+    var animalOwner = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print("print do name")
+        print(name)
+        
         // Do any additional setup after loading the view.
         photo.layer.cornerRadius = 40
         photo.layer.borderWidth = 1.0
@@ -29,6 +40,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         photo.clipsToBounds = true
         
         photo.image = UIImage(named: "benji")
+        animalNameLabel.text = name
+        animalDobLabel.text = "10/10/2010"
+        animalOwnerLabel.text = "raqs"
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,9 +59,9 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileTableViewCell
         cell.imageOption.image = UIImage(named: images[indexPath.row])
         cell.textOption.text = options[indexPath.row]
-        
+
         cell.accessoryType = .disclosureIndicator
-        
+
         return cell
     }
     
