@@ -15,18 +15,12 @@ class HospitalisationViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     let general_title = ["Entry Date", "Motive", "Veterinarian", "Observations"]
-    //var general_data = ["a", "b", "c", "d"]
     var general_data = [String]()
     
-//    var medicine_name = ["x", "y", "z"]
-//    var medicine_dosage = ["1", "2", "3"]
-//    var medicine_frequency = ["4", "5", "6"]
     var medicine_name = [String]()
     var medicine_dosage = [String]()
     var medicine_frequency = [String]()
     
-//    var procedure_name = ["ecografia", "eletrocardiograma", "raio-x"]
-//    var procedure_date = ["1/1/1", "2/2/2", "3/3/3"]
     var procedure_name = [String]()
     var procedure_date = [String]()
     
@@ -146,7 +140,7 @@ class HospitalisationViewController: UIViewController, UITableViewDelegate, UITa
                 if p.name == animalName{
                     for proc in p.procedure?.allObjects as! [Procedure] {
                         procedure_name.append(proc.name!)
-                        procedure_date.append(convertDateToString(date: proc.date as! Date))
+                        procedure_date.append(convertDateToString(date: proc.date! as Date))
                     }
                 }
                 

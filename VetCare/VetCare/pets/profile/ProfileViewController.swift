@@ -79,6 +79,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             let destVC = segue.destination as! HospitalisationViewController
             destVC.animalName = (sender as? String)!
         }
+        if segue.identifier == "historic"{
+            let destVC = segue.destination as! HistoricViewController
+            destVC.animalName = (sender as? String)!
+        }
     }
     
     @IBAction func goBack(_ sender: Any) {

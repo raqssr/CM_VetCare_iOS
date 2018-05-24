@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import CoreData
 
 class HistoricViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var historic = ["vacina raiva", "chip"]
-    var dates = ["1/1/1", "2/2/2"]
+//    var historic = ["vacina raiva", "chip"]
+//    var dates = ["1/1/1", "2/2/2"]
+
+    var historic = [String]()
+    var dates = [String]()
+    
+    var animalName = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        initData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,15 +43,30 @@ class HistoricViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func initData(){
+        var pets = [Animal]()
+        let request = NSFetchRequest<Animal>(entityName: "Animal")
+        do {
+            pets = try PersistenceService.getContext().fetch(request)
+            for p in pets {
+                if p.name == animalName{
+                    for h in p.historic?.allObjects as! [Historic] {
+                        historic.append(h.procedures!)
+                        dates.append(convertDateToString(date: h.dates! as Date))
+                    }
+                }
+                
+            }
+        }
+        catch{
+            print("Error: \(error)")
+        }
     }
-    */
+    
+    func convertDateToString(date: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        return dateFormatter.string(from: date) //according to date format your date string
+    }
 
 }
