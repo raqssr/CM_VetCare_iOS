@@ -66,7 +66,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: segueIdentifiers[indexPath.row], sender: self)
+        let nameAnimal = name
+        performSegue(withIdentifier: segueIdentifiers[indexPath.row], sender: nameAnimal)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "generalInfo"{
+            let destVC = segue.destination as! GeneralInfoViewController
+            destVC.animalName = (sender as? String)!
+        }
     }
     
     @IBAction func goBack(_ sender: Any) {

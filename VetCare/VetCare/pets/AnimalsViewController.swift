@@ -41,6 +41,14 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
         initData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        animalsNames.removeAll()
+        animalsWeight.removeAll()
+        animalsImages.removeAll()
+        animalsOwners.removeAll()
+        viewDidLoad()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

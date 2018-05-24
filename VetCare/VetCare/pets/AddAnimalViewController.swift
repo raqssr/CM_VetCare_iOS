@@ -68,6 +68,7 @@ class AddAnimalViewController: UIViewController, UITextFieldDelegate, UIImagePic
         newAnimal.weight = Double(weight.text!)!
         newAnimal.specie = specie.text
         newAnimal.breed = breed.text
+        newAnimal.coat = coat.text
         newAnimal.image = UIImagePNGRepresentation(animalImage!) as NSData?
         print("acabou o animal")
         

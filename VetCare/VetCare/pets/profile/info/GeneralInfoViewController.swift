@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GeneralInfoViewController: UIViewController {
     
@@ -19,16 +20,67 @@ class GeneralInfoViewController: UIViewController {
     @IBOutlet weak var weight: UILabel!
     @IBOutlet weak var ownerName: UILabel!
     @IBOutlet weak var ownerPhone: UILabel!
+    
+    var animalName = String()
+    var animalDob = String()
+    var animalGender = String()
+    var animalSpecie = String()
+    var animalBreed = String()
+    var animalCoat = String()
+    var animalWeight = String()
+    var animalOwnerName = String()
+    var animalOwnerPhone = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        initData()
+        
+        name.text = animalName
+        dob.text = animalDob
+        gender.text = animalGender
+        specie.text = animalSpecie
+        breed.text = animalBreed
+        coat.text = animalCoat
+        weight.text = animalWeight
+        ownerName.text = animalOwnerName
+        ownerPhone.text = animalOwnerPhone
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initData(){
+        let fetchRequest:NSFetchRequest<Animal> = Animal.fetchRequest()
+        do{
+            let searchResults = try PersistenceService.getContext().fetch(fetchRequest)
+            print("number of results: \(searchResults.count)")
+            
+            for result in searchResults as [Animal]{
+                if result.name! == animalName{
+                    animalDob = convertDateToString(date: result.dob! as Date)
+                    animalGender = result.gender!
+                    animalSpecie = result.specie!
+                    animalBreed = result.breed!
+                    animalCoat = result.coat!
+                    animalWeight = String(result.weight)
+                    animalOwnerName = (result.owner?.name)!
+                    animalOwnerPhone = String((result.owner?.phone)!)
+                }
+            }
+        }
+        catch{
+            print("Error: \(error)")
+        }
+    }
+    
+    func convertDateToString(date: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        return dateFormatter.string(from: date) //according to date format your date string
     }
     
 
