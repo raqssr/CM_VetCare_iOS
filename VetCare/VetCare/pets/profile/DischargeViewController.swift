@@ -157,7 +157,6 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
         } else {
             text += "No files found."
         }
-        output.text = text
     }
     
     
