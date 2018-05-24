@@ -83,15 +83,18 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        //let desVC = mainStoryboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        let profileView: ProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        profileView.name = animalsNames[indexPath.row].capitalized
-        //desVC.name = animalsNames[indexPath.row].capitalized
-        print("o que vai passar")
-        print(animalsNames[indexPath.row].capitalized)
-        //self.navigationController?.pushViewController(desVC, animated: true)
-        self.navigationController?.pushViewController(profileView, animated: true)
+        let name = animalsNames[indexPath.row]
+        performSegue(withIdentifier: "MasterToDetail", sender: name)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MasterToDetail"{
+            let navVC = segue.destination as? UINavigationController
+            let destVC = navVC?.viewControllers.first as! ProfileViewController
+            destVC.name = (sender as? String)!
+//            let destVC = segue.destination as! ProfileViewController
+//            destVC.name = (sender as? String)!
+        }
     }
     
     @IBAction func identifyAnimal(_ sender: Any) {

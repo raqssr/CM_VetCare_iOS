@@ -134,7 +134,6 @@
                                             <outlet property="animalName" destination="R6V-uq-QRe" id="x9q-1e-TAV"/>
                                             <outlet property="animalOwner" destination="h31-Sq-mib" id="r4L-t0-QNh"/>
                                             <outlet property="animalWeight" destination="bfP-X5-yPH" id="u0i-NU-zHx"/>
-                                            <segue destination="FaG-vu-MKz" kind="show" identifier="" id="Dma-qS-GsW"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -158,6 +157,7 @@
                     <connections>
                         <outlet property="collectionView" destination="gU6-WY-HwE" id="Ril-eO-XNv"/>
                         <outlet property="navigationBar" destination="wZo-HN-YFi" id="QMI-T2-eU3"/>
+                        <segue destination="mUa-n9-jkR" kind="show" identifier="MasterToDetail" id="ymC-MU-tBZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kx-dI-7Qb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -403,7 +403,7 @@
         <!--Profile-->
         <scene sceneID="sZs-6P-C8Y">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ibu-2y-Tp7" customClass="ProfileViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="ibu-2y-Tp7" customClass="ProfileViewController" customModule="VetCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OqG-hm-DOZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -559,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDY-KR-LTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3293" y="450"/>
+            <point key="canvasLocation" x="4290" y="450"/>
         </scene>
         <!--Discharge Animal-->
         <scene sceneID="21E-tZ-h3Y">
@@ -623,7 +623,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDv-2X-ge4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5469" y="639"/>
+            <point key="canvasLocation" x="6465" y="638.02816901408448"/>
         </scene>
         <!--Write Message-->
         <scene sceneID="hv2-qx-BfW">
@@ -677,7 +677,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOI-eH-acX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4913" y="-72"/>
+            <point key="canvasLocation" x="5910" y="-72.887323943661968"/>
         </scene>
         <!--Animal's Record-->
         <scene sceneID="tn6-Yy-M9k">
@@ -1035,7 +1035,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h44-uO-3QS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4744" y="1039"/>
+            <point key="canvasLocation" x="5741.25" y="1038.3802816901409"/>
         </scene>
         <!--Documents-->
         <scene sceneID="tdn-bA-PoN">
@@ -1330,31 +1330,6 @@
             </objects>
             <point key="canvasLocation" x="3294" y="-269"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gtF-jZ-OCf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FaG-vu-MKz" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w9z-fs-wRe">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.1333333333" green="0.56862745100000001" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.1333333333" green="0.56862745100000001" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ibu-2y-Tp7" kind="relationship" relationship="rootViewController" id="64U-5V-d7P"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eU3-RV-OtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2094" y="451"/>
-        </scene>
         <!--Task List-->
         <scene sceneID="piP-ka-pu2">
             <objects>
@@ -1430,6 +1405,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s3b-Fb-PMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1491" y="-596"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="N6M-N6-PV6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mUa-n9-jkR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ice-V5-1q4">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ibu-2y-Tp7" kind="relationship" relationship="rootViewController" id="lRO-eN-PuH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hCg-ad-hYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3292.5" y="450"/>
         </scene>
     </scenes>
     <resources>
