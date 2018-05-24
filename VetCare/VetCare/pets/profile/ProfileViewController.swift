@@ -75,6 +75,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             let destVC = segue.destination as! GeneralInfoViewController
             destVC.animalName = (sender as? String)!
         }
+        if segue.identifier == "hospitalisation"{
+            let destVC = segue.destination as! HospitalisationViewController
+            destVC.animalName = (sender as? String)!
+        }
     }
     
     @IBAction func goBack(_ sender: Any) {

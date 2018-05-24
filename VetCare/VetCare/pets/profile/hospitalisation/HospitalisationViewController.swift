@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HospitalisationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -14,14 +15,22 @@ class HospitalisationViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     let general_title = ["Entry Date", "Motive", "Veterinarian", "Observations"]
-    var general_data = ["a", "b", "c", "d"]
+    //var general_data = ["a", "b", "c", "d"]
+    var general_data = [String]()
     
-    var medicine_name = ["x", "y", "z"]
-    var medicine_dosage = ["1", "2", "3"]
-    var medicine_frequency = ["4", "5", "6"]
+//    var medicine_name = ["x", "y", "z"]
+//    var medicine_dosage = ["1", "2", "3"]
+//    var medicine_frequency = ["4", "5", "6"]
+    var medicine_name = [String]()
+    var medicine_dosage = [String]()
+    var medicine_frequency = [String]()
     
-    var procedure_name = ["ecografia", "eletrocardiograma", "raio-x"]
-    var procedure_date = ["1/1/1", "2/2/2", "3/3/3"]
+//    var procedure_name = ["ecografia", "eletrocardiograma", "raio-x"]
+//    var procedure_date = ["1/1/1", "2/2/2", "3/3/3"]
+    var procedure_name = [String]()
+    var procedure_date = [String]()
+    
+    var animalName = String()
     
     var p: Int!
     
@@ -37,6 +46,10 @@ class HospitalisationViewController: UIViewController, UITableViewDelegate, UITa
         tableView.register(nib_proc, forCellReuseIdentifier: "procedureCell")
         
         p = 0
+        
+        initData()
+        initMedicine()
+        initProcedures()
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,6 +94,73 @@ class HospitalisationViewController: UIViewController, UITableViewDelegate, UITa
     @IBAction func switchViewAction(_ sender: UISegmentedControl) {
         p = sender.selectedSegmentIndex
         tableView.reloadData()
+    }
+    
+    func initData(){
+        let fetchRequest:NSFetchRequest<Animal> = Animal.fetchRequest()
+        do{
+            let searchResults = try PersistenceService.getContext().fetch(fetchRequest)
+            print("number of results: \(searchResults.count)")
+            
+            for result in searchResults as [Animal]{
+                if result.name! == animalName{
+                    general_data.append((result.internment?.entryDate)!)
+                    general_data.append((result.internment?.motive)!)
+                    general_data.append((result.internment?.veterinarian)!)
+                    general_data.append((result.internment?.observation)!)
+                }
+            }
+        }
+        catch{
+            print("Error: \(error)")
+        }
+    }
+    
+    func initMedicine(){
+        var pets = [Animal]()
+        let request = NSFetchRequest<Animal>(entityName: "Animal")
+        do {
+            pets = try PersistenceService.getContext().fetch(request)
+            for p in pets {
+                if p.name == animalName{
+                    for med in p.medicine?.allObjects as! [Medicine] {
+                        medicine_name.append(med.name!)
+                        medicine_dosage.append(String(med.dosage))
+                        medicine_frequency.append(String(med.frequency))
+                    }
+                }
+                
+            }
+        }
+        catch{
+            print("Error: \(error)")
+        }
+    }
+    
+    func initProcedures(){
+        var pets = [Animal]()
+        let request = NSFetchRequest<Animal>(entityName: "Animal")
+        do {
+            pets = try PersistenceService.getContext().fetch(request)
+            for p in pets {
+                if p.name == animalName{
+                    for proc in p.procedure?.allObjects as! [Procedure] {
+                        procedure_name.append(proc.name!)
+                        procedure_date.append(convertDateToString(date: proc.date as! Date))
+                    }
+                }
+                
+            }
+        }
+        catch{
+            print("Error: \(error)")
+        }
+    }
+    
+    func convertDateToString(date: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        return dateFormatter.string(from: date) //according to date format your date string
     }
     
     /*
