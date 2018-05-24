@@ -38,7 +38,7 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         readData = false
         
-        initDate()
+        initData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,8 +92,6 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
             let navVC = segue.destination as? UINavigationController
             let destVC = navVC?.viewControllers.first as! ProfileViewController
             destVC.name = (sender as? String)!
-//            let destVC = segue.destination as! ProfileViewController
-//            destVC.name = (sender as? String)!
         }
     }
     
@@ -144,7 +142,7 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
     }
     
-    func initDate(){
+    func initData(){
         let fetchRequest:NSFetchRequest<Animal> = Animal.fetchRequest()
         do{
             let searchResults = try PersistenceService.getContext().fetch(fetchRequest)
