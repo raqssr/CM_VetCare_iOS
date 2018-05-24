@@ -592,6 +592,9 @@
                                 <state key="normal" title="Generate PDF">
                                     <color key="titleColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="generatePDF:" destination="tre-j5-02X" eventType="touchUpInside" id="gBy-Uk-EFJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

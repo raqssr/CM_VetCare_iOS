@@ -14,5 +14,6 @@ target 'VetCare' do
   pod 'GoogleSignIn', '~> 4.1.1'
   pod 'KontaktSDK', '~> 1.3'
   pod 'Charts'
+  pod 'TPPDF'
 
 end
