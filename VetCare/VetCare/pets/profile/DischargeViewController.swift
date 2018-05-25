@@ -20,7 +20,7 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
     
     // If modifying these scopes, delete your previously saved credentials by
     // resetting the iOS simulator or uninstall the app.
-    private let scopes = [kGTLRAuthScopeDriveReadonly]
+    private let scopes = [kGTLRAuthScopeDrive]
 
     private let service = GTLRDriveService()
     let signInButton = GIDSignInButton()
@@ -42,13 +42,13 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
         GIDSignIn.sharedInstance().scopes = scopes
         GIDSignIn.sharedInstance().signInSilently()
         
-        signInButton.center = view.center
+        //signInButton.center = view.center
 
         // Add the sign-in button.
         view.addSubview(signInButton)
-        self.signInButton.isHidden = true
+        //self.signInButton.isHidden = true
         self.pdfGeneratorButton.isHidden = true
-        start()
+        //start()
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,21 +88,23 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
 
         // 5. Save PDF file
 
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        //let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
 
-        pdfData.write(toFile: "\(documentsPath)/file.pdf", atomically: true)
+        //pdfData.write(toFile: "\(documentsPath)/file.pdf", atomically: true)
         
-//        var fileData: Data? = FileManager.default.contents(atPath: "files/photo.jpg")
+//        var fileData: Data? = FileManager.default.contents(atPath: "/")
 //        var metadata = GTLRDrive_File()
-//        metadata.name = "photo.jpg"
-//        var uploadParameters = GTLRUploadParameters(data: fileData, mimeType: "image/jpeg")
+//        metadata.name = "example.pdf"
+//        var uploadParameters = GTLRUploadParameters(data: fileData!, mimeType: "application/pdf")
 //        uploadParameters.shouldUploadWithSingleRequest = true
 //        var query = GTLRDriveQuery_FilesCreate.query(withObject: metadata, uploadParameters: uploadParameters)
 //        query.fields = "id"
-//        driveService.executeQuery(query, completionHandler: {(_ ticket: GTLRServiceTicket?, _ file: GTLRDrive_File?, _ error: Error?) -> Void in
+//        self.service.executeQuery(query, completionHandler: {(_ ticket: GTLRServiceTicket, _ object: Any?, _ error: Error?) -> () in
 //            if error == nil {
-//                if let anIdentifier = file?.identifier {
-//                    print("File ID \(anIdentifier)")
+//                if let anIdentifier = (object? as AnyObject).identifier
+//                {
+//                    //print("File ID \(anIdentifier)")
+//                    print("não deu erro")
 //                }
 //            } else {
 //                if let anError = error {
@@ -110,7 +112,28 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
 //                }
 //            }
 //        })
-//
+        
+        let file = GTLRDrive_File() as GTLRDrive_File
+        file.name = "Example.pdf"
+        file.descriptionProperty = "Uploaded from Google Drive IOS"
+        file.mimeType = "application/pdf"
+        let data = pdfData
+        let uploadParameters = GTLRUploadParameters(data: data as Data, mimeType: file.mimeType!)
+        uploadParameters.shouldUploadWithSingleRequest = true
+        let query = GTLRDriveQuery_FilesCreate.query(withObject: file, uploadParameters: uploadParameters)
+        self.service.executeQuery(query, completionHandler:  { (ticket, insertedFile , error) -> Void in
+            let myFile = insertedFile as? GTLRDrive_File
+            
+            if error == nil {
+                print("File ID \(myFile?.identifier)")
+                print("Google Drive: File Saved")
+            } else {
+                print("An Error Occurred! \(error)")
+                print("Google Drive: Sorry, an error occurred!")
+            }
+            
+        })
+
 //        let document = PDFDocument(format: .a4)
 //        document.addText(.contentCenter, text: "Create PDF documents easily.")
 //        do {
@@ -131,28 +154,17 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
               withError error: Error!) {
         if (error) != nil {
             showAlert(title: "Google Sign In", message: "You must sign in the first time you run the application in order to be able to save discharge reports in Google Drive.")
-            self.signInButton.isHidden = false
-            //showAlert(title: "Authentication Error", message: error.localizedDescription)
+            signInButton.center = view.center
+            view.addSubview(signInButton)
             self.service.authorizer = nil
         } else {
-            self.signInButton.isHidden = true
+            signInButton.isHidden = true
             self.pdfGeneratorButton.center = view.center
             self.pdfGeneratorButton.isHidden = false
             stop()
             loadingView.isHidden = true
             self.service.authorizer = user.authentication.fetcherAuthorizer()
-            listFiles()
         }
-    }
-
-    // List up to 10 files in Drive
-    func listFiles() {
-        let query = GTLRDriveQuery_FilesList.query()
-        query.pageSize = 10
-        service.executeQuery(query,
-                             delegate: self,
-                             didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:))
-        )
     }
 
     // Process the response and display output
@@ -194,18 +206,10 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
     }
     
     func start(){
-//        loadingView.frame = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 80, height: 80))
-//        loadingView.center = view.center
-//        loadingView.backgroundColor = UIColor(displayP3Red: 0.26, green: 0.26, blue: 0.26, alpha: 0.7)
-//        loadingView.clipsToBounds = true
-//        loadingView.layer.cornerRadius = 10
         activityIndicator.frame = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 80, height: 80))
-        //activityIndicator.center = CGPoint(x: loadingView.frame.size.width / 2, y: loadingView.frame.size.height / 2)
         activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-//        loadingView.addSubview(activityIndicator)
-//        view.addSubview(loadingView)
         view.addSubview(activityIndicator)
         
         activityIndicator.startAnimating()

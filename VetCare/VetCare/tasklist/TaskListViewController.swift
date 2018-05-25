@@ -11,24 +11,22 @@ import GoogleSignIn
 
 class TaskListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GIDSignInDelegate, GIDSignInUIDelegate {
     
-    var animals = ["benji", "bolinhas", "bobi"]
-    var tasks = ["analises", "raio-x", "desinfetar pontos"]
-    var hours = ["09:00", "15:00", "17:30"]
-    
     @IBOutlet weak var tableView: UITableView!
     
     // If modifying these scopes, delete your previously saved credentials by
     // resetting the iOS simulator or uninstall the app.
-    private let scopes = [kGTLRAuthScopeCalendarReadonly]
+    private let scopes = [kGTLRAuthScopeCalendar]
     
     private let service = GTLRCalendarService()
-
+    let signInButton = GIDSignInButton()
+    
     var calendarEvents = [String]()
     var dates = [String]()
     var hoursTasks = [String]()
     var animalsName = [String]()
     var animalsTask = [String]()
     var eventsLoaded = false
+    var signInDone = false
     
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
@@ -38,12 +36,15 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         self.tabBarController?.tabBar.isHidden = false
         
         // Do any additional setup after loading the view.
+        GIDSignIn.sharedInstance().clientID = "1040218745705-lnll051g8m2ji8ftnapopv5nn9no4vrt.apps.googleusercontent.com"
 
         // Initialize Google sign-in.
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().scopes = scopes
         GIDSignIn.sharedInstance().signInSilently()
+        
+        self.tableView.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,12 +55,21 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        tableView.isHidden = false
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if eventsLoaded == false{
-            start()
-            return 0
+            if signInDone == false{
+                print("vi que ainda nao foi feito sign in")
+                return 0
+            }
+            else{
+                print("ja foi feito sign in")
+                start()
+                return 0
+            }
         }
         else{
             if animalsName.count == 0{
@@ -85,20 +95,38 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
             return cell
         }
         else{
-            start()
-            cell.animalName.text = " "
-            cell.task.text = " "
-            cell.hours.text = " "
-            return cell
+            if signInDone == false{
+                print("eventos carregados mas sem start pq sem sign in")
+                cell.animalName.text = " "
+                cell.task.text = " "
+                cell.hours.text = " "
+                return cell
+            }
+            else{
+                print("eventos carregados mas c start pq sign in")
+                start()
+                cell.animalName.text = " "
+                cell.task.text = " "
+                cell.hours.text = " "
+                return cell
+            }
         }
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-            print("vai dar merda")
-            showAlert(title: "Authentication Error", message: error.localizedDescription)
+        if (error) != nil {
+            print("vou mostrar o alert")
+            showAlert(title: "Google Sign In", message: "You must sign in the first time you run the application in order to be able to access google calendar events.")
+            print("vou mostrar o botao")
+            signInButton.center = view.center
+            view.addSubview(signInButton)
+            print("apareceu")
             self.service.authorizer = nil
         } else {
+            signInButton.isHidden = true
+            signInDone = true
+            stop()
+            self.tableView.isHidden = false
             self.service.authorizer = user.authentication.fetcherAuthorizer()
             fetchEvents()
         }
@@ -117,7 +145,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
             didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:)))
     }
     
-    // Display the start dates and event summaries in the UITextView
     @objc func displayResultWithTicket(
         ticket: GTLRServiceTicket,
         finishedWithObject response : GTLRCalendar_Events,
@@ -193,7 +220,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func start(){
-        activityIndicator.center = self.view.center
+        activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(activityIndicator)
