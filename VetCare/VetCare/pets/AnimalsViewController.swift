@@ -120,7 +120,7 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func startScanning() {
-        let uuid = UUID(uuidString: "c9804b7e-7193-4937-8aa0-71252fb62c59")!
+        let uuid = UUID(uuidString: "68f9d1e2-7f72-46d9-8722-9d116b2eab2d")!
         nameAnimal = "Benji"
         let beaconRegion = CLBeaconRegion(proximityUUID: uuid, major: 50, minor: 0, identifier: "cm2018")
         
