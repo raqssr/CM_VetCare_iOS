@@ -649,6 +649,9 @@
                                 <state key="normal" title="Send">
                                     <color key="titleColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendMessage:" destination="DSt-AJ-HdG" eventType="touchUpInside" id="aoM-iy-0QX"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eJR-yI-rQ0">
                                 <rect key="frame" x="24" y="117" width="272" height="380"/>

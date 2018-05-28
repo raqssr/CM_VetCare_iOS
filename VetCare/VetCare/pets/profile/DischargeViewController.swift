@@ -10,6 +10,7 @@ import UIKit
 import TPPDF
 import GoogleAPIClientForREST
 import GoogleSignIn
+import CoreData
 
 class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
@@ -19,6 +20,13 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
     @IBOutlet weak var pdfGenerator: UIButton!
     
     var animalNameReport = String()
+    
+    var medName = String()
+    var medDosage = String()
+    var medTotalDays = String()
+    
+    var procName = String()
+    var procDate = String()
     
     // If modifying these scopes, delete your previously saved credentials by
     // resetting the iOS simulator or uninstall the app.
@@ -47,13 +55,12 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
         GIDSignIn.sharedInstance().scopes = scopes
         GIDSignIn.sharedInstance().signInSilently()
         
-        //signInButton.center = view.center
-
+        getMedicine()
+        getProcedure()
+        
         // Add the sign-in button.
         view.addSubview(signInButton)
-        //self.signInButton.isHidden = true
         self.pdfGeneratorButton.isHidden = true
-        //start()
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +69,7 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
     }
     
     @IBAction func generatePDF(_ sender: Any) {
-        let html = "<b>Discharge Report</b> <p>Animal name: \(animalNameReport)</p> <p>Weight: \(weight.text!)</p> <p>Veterinarian: \(veterinarian.text!)</p> <p>Observations: \(observations.text!)</p>"
+        let html = "<b>Discharge Report</b> <p></p> <p>Animal name: \(animalNameReport)</p> <p>Weight: \(weight.text!)</p> <p>Veterinarian: \(veterinarian.text!)</p> <p>Observations: \(observations.text!)</p> <p>Procedures: <ul><li>\(procName) (\(procDate))</li></ul></p> <p>Medicine: <ul><li>\(medName) (Dosage: \(medDosage), Total days: \(medTotalDays))</li></ul></p>"
         let fmt = UIMarkupTextPrintFormatter(markupText: html)
 
         // 2. Assign print formatter to UIPrintPageRenderer
@@ -109,8 +116,9 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
                 print("An Error Occurred! \(error)")
                 print("Google Drive: Sorry, an error occurred!")
             }
-            
         })
+        
+        deleteAndGoBack()
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
@@ -180,6 +188,74 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
     
     func stop(){
         activityIndicator.stopAnimating()
+    }
+    
+    func getMedicine(){
+        var pets = [Animal]()
+        let request = NSFetchRequest<Animal>(entityName: "Animal")
+        do {
+            pets = try PersistenceService.getContext().fetch(request)
+            for p in pets {
+                if p.name == animalNameReport{
+                    for med in p.medicine?.allObjects as! [Medicine] {
+                        medName = (med.name!)
+                        medDosage = String(med.dosage)
+                        medTotalDays = String(med.totalDays)
+                    }
+                }
+                
+            }
+        }
+        catch{
+            print("Error: \(error)")
+        }
+    }
+    
+    func getProcedure(){
+        var pets = [Animal]()
+        let request = NSFetchRequest<Animal>(entityName: "Animal")
+        do {
+            pets = try PersistenceService.getContext().fetch(request)
+            for p in pets {
+                if p.name == animalNameReport{
+                    for proc in p.procedure?.allObjects as! [Procedure] {
+                        procName = proc.name!
+                        procDate = convertDateToString(date: proc.date! as Date)
+                    }
+                }
+                
+            }
+        }
+        catch{
+            print("Error: \(error)")
+        }
+    }
+    
+    func convertDateToString(date: Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        return dateFormatter.string(from: date) //according to date format your date string
+    }
+    
+    func deleteAndGoBack()
+    {
+        let fetchRequest:NSFetchRequest<Animal> = Animal.fetchRequest()
+        do{
+            let searchResults = try PersistenceService.getContext().fetch(fetchRequest)
+            print("number of results: \(searchResults.count)")
+            
+            for result in searchResults as [Animal]{
+                if result.name == animalNameReport{
+                    PersistenceService.getContext().delete(result)
+                    break
+                }
+            }
+        }
+        catch{
+            print("Error: \(error)")
+        }
+        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import MessageUI
+import CoreData
 
-class SendMessageViewController: UIViewController, UITextViewDelegate {
+class SendMessageViewController: UIViewController, UITextViewDelegate, MFMessageComposeViewControllerDelegate {
 
     @IBOutlet weak var messageBox: UITextView!
     
     var animalNameMessage = String()
+    var ownerPhone = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +24,12 @@ class SendMessageViewController: UIViewController, UITextViewDelegate {
         print(animalNameMessage)
         
         // Do any additional setup after loading the view.
-        messageBox.text = "Write here!"
+        messageBox.text = nil
         messageBox.layer.cornerRadius = 10
         messageBox.textColor = UIColor.darkGray
         self.hideKeyboardWhenTappedAround()
+        
+        getAnimalOwnerPhone()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,16 +37,43 @@ class SendMessageViewController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func sendMessage(_ sender: Any) {
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = messageBox.text
+            controller.recipients = [ownerPhone]
+            controller.messageComposeDelegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
     }
-    */
-
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        //... handle sms screen actions
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    func getAnimalOwnerPhone(){
+        let fetchRequest:NSFetchRequest<Animal> = Animal.fetchRequest()
+        do{
+            let searchResults = try PersistenceService.getContext().fetch(fetchRequest)
+            print("number of results: \(searchResults.count)")
+            
+            for result in searchResults as [Animal]{
+                if result.name! == animalNameMessage{
+                    ownerPhone = String((result.owner?.phone)!)
+                    break
+                }
+            }
+        }
+        catch{
+            print("Error: \(error)")
+        }
+    }
+    
 }
 
 extension UIViewController {
