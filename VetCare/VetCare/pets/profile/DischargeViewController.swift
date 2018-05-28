@@ -18,6 +18,8 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
     @IBOutlet weak var observations: UITextField!
     @IBOutlet weak var pdfGenerator: UIButton!
     
+    var animalNameReport = String()
+    
     // If modifying these scopes, delete your previously saved credentials by
     // resetting the iOS simulator or uninstall the app.
     private let scopes = [kGTLRAuthScopeDrive]
@@ -33,6 +35,9 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("name discharge")
+        print(animalNameReport)
+        
         // Do any additional setup after loading the view.
         GIDSignIn.sharedInstance().clientID = "1040218745705-4451usgufp84li2njpe66u837hhc7o9s.apps.googleusercontent.com"
 
@@ -57,7 +62,7 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
     }
     
     @IBAction func generatePDF(_ sender: Any) {
-        let html = "<b>Hello <i>World!</i></b> <p>Generate PDF file from HTML in Swift</p>"
+        let html = "<b>Discharge Report</b> <p>Animal name: \(animalNameReport)</p> <p>Weight: \(weight.text!)</p> <p>Veterinarian: \(veterinarian.text!)</p> <p>Observations: \(observations.text!)</p>"
         let fmt = UIMarkupTextPrintFormatter(markupText: html)
 
         // 2. Assign print formatter to UIPrintPageRenderer
@@ -85,36 +90,9 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
         }
 
         UIGraphicsEndPDFContext();
-
-        // 5. Save PDF file
-
-        //let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-
-        //pdfData.write(toFile: "\(documentsPath)/file.pdf", atomically: true)
-        
-//        var fileData: Data? = FileManager.default.contents(atPath: "/")
-//        var metadata = GTLRDrive_File()
-//        metadata.name = "example.pdf"
-//        var uploadParameters = GTLRUploadParameters(data: fileData!, mimeType: "application/pdf")
-//        uploadParameters.shouldUploadWithSingleRequest = true
-//        var query = GTLRDriveQuery_FilesCreate.query(withObject: metadata, uploadParameters: uploadParameters)
-//        query.fields = "id"
-//        self.service.executeQuery(query, completionHandler: {(_ ticket: GTLRServiceTicket, _ object: Any?, _ error: Error?) -> () in
-//            if error == nil {
-//                if let anIdentifier = (object? as AnyObject).identifier
-//                {
-//                    //print("File ID \(anIdentifier)")
-//                    print("não deu erro")
-//                }
-//            } else {
-//                if let anError = error {
-//                    print("An error occurred: \(anError)")
-//                }
-//            }
-//        })
         
         let file = GTLRDrive_File() as GTLRDrive_File
-        file.name = "Example.pdf"
+        file.name = "\(animalNameReport).pdf"
         file.descriptionProperty = "Uploaded from Google Drive IOS"
         file.mimeType = "application/pdf"
         let data = pdfData
@@ -133,21 +111,6 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
             }
             
         })
-
-//        let document = PDFDocument(format: .a4)
-//        document.addText(.contentCenter, text: "Create PDF documents easily.")
-//        do {
-//            // Generate PDF file and save it in a temporary file. This returns the file URL to the temporary file
-//            let url = try PDFGenerator.generateURL(document: document, filename: "Example.pdf", progress: {
-//                (progressValue: CGFloat) in
-//                print("progress: ", progressValue)
-//            }, debug: true)
-//
-//            // Load PDF into a webview from the temporary file
-//            (self.view as? UIWebView)?.loadRequest(URLRequest(url: url))
-//        } catch {
-//            print("Error while generating PDF: " + error.localizedDescription)
-//        }
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
@@ -218,4 +181,6 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
     func stop(){
         activityIndicator.stopAnimating()
     }
+    
+    
 }

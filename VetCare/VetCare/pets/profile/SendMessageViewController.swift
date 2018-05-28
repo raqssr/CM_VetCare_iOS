@@ -12,9 +12,14 @@ class SendMessageViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var messageBox: UITextView!
     
+    var animalNameMessage = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("name message")
+        print(animalNameMessage)
+        
         // Do any additional setup after loading the view.
         messageBox.text = "Write here!"
         messageBox.layer.cornerRadius = 10

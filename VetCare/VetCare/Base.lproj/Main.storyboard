@@ -536,13 +536,13 @@
                             <barButtonItem systemItem="trash" id="VPa-ru-NQy">
                                 <color key="tintColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="tre-j5-02X" kind="show" id="WKj-Rr-OZq"/>
+                                    <segue destination="tre-j5-02X" kind="show" identifier="dischargeAnimal" id="WKj-Rr-OZq"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="compose" id="H7F-Rp-K9Z">
                                 <color key="tintColor" red="0.035862432440000001" green="0.75822890229999995" blue="0.54720858630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="DSt-AJ-HdG" kind="show" id="Cte-CX-r04"/>
+                                    <segue destination="DSt-AJ-HdG" kind="show" identifier="writeMessageToUser" id="Cte-CX-r04"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>

@@ -83,6 +83,14 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             let destVC = segue.destination as! HistoricViewController
             destVC.animalName = (sender as? String)!
         }
+        if segue.identifier == "writeMessageToUser"{
+            let destVC = segue.destination as! SendMessageViewController
+            destVC.animalNameMessage = name
+        }
+        if segue.identifier == "dischargeAnimal"{
+            let destVC = segue.destination as! DischargeViewController
+            destVC.animalNameReport = name
+        }
     }
     
     @IBAction func goBack(_ sender: Any) {
@@ -113,16 +121,4 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         dateFormatter.dateFormat = "dd-MM-yyyy"
         return dateFormatter.string(from: date) //according to date format your date string
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
