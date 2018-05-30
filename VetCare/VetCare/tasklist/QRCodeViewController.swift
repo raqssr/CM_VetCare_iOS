@@ -56,9 +56,10 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
                     let alert = UIAlertController(title: "The animal is: ", message: object.stringValue, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
                     alert.addAction(UIAlertAction(title: "Go back", style: .default, handler: { (nil) in
-                        _ = self.navigationController?.popViewController(animated: true)
-                        //self.tabBarController?.tabBar.isHidden = false
-                        
+                        let a = self.navigationController?.viewControllers.first as! TaskListViewController
+                        a.resultQrCode = object.stringValue!
+                        _ = self.navigationController?.popToRootViewController(animated: true)
+                        //_ = self.navigationController?.popViewController(animated: true)
                     }))
                     present(alert, animated: true, completion: nil)
                 }
@@ -70,16 +71,4 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

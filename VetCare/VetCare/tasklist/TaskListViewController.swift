@@ -30,6 +30,10 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
+    var resultQrCode = String()
+    var qrCodeRead = false
+    var refresher: UIRefreshControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +48,17 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         GIDSignIn.sharedInstance().scopes = scopes
         GIDSignIn.sharedInstance().signInSilently()
         
+        print("resultQrCode")
+        print(resultQrCode)
+        
+        qrCodeRead = false
+        
         self.tableView.isHidden = true
+        
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresher.addTarget(self, action: #selector(TaskListViewController.reloadEventsForTable), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refresher)
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,7 +68,20 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if resultQrCode.isEmpty == false{
+            qrCodeRead = true
+        }
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    @objc func reloadEventsForTable(){
+        calendarEvents.removeAll()
+        dates.removeAll()
+        hoursTasks.removeAll()
+        animalsName.removeAll()
+        animalsTask.removeAll()
+        fetchEvents()
+        refresher.endRefreshing()
         tableView.isHidden = false
         tableView.reloadData()
     }
@@ -73,11 +100,16 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         else{
             if animalsName.count == 0{
-                stop()
-                let alert = UIAlertController(title: "Task List", message: "There are no tasks for today!", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                present(alert, animated: true, completion: nil)
-                return 0
+                if qrCodeRead == false{
+                    stop()
+                    let alert = UIAlertController(title: "Task List", message: "There are no tasks for today!", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    present(alert, animated: true, completion: nil)
+                    return 0
+                }
+                else{
+                    return 0
+                }
             }
             else{
                 return animalsName.count
@@ -134,8 +166,9 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // Construct a query and get a list of upcoming events from the user calendar
     func fetchEvents() {
+        start()
         let query = GTLRCalendarQuery_EventsList.query(withCalendarId: "primary")
-        query.maxResults = 10
+        query.maxResults = 20
         query.timeMin = GTLRDateTime(date: Date())
         query.singleEvents = true
         query.orderBy = kGTLRCalendarOrderByStartTime
@@ -158,6 +191,18 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         var outputText = ""
         if let events = response.items, !events.isEmpty {
             for event in events {
+                var eventDescription = (event.summary!).split(separator: ":")
+                //var animalNameEvent = eventDescription[0]
+                print("evento")
+                print(eventDescription)
+                print("------------")
+                if eventDescription[0] == resultQrCode{
+                    if qrCodeRead == true{
+                        print("bora apagar")
+                        let query = GTLRCalendarQuery_EventsDelete.query(withCalendarId: "primary", eventId: event.identifier!)
+                        service.executeQuery(query, delegate: self, didFinish: nil)
+                    }
+                }
                 let start = event.start!.dateTime ?? event.start!.date!
                 let startString = DateFormatter.localizedString(
                     from: start.date,
@@ -231,14 +276,4 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     func stop(){
         activityIndicator.stopAnimating()
     }
-    
-    /*
-     // MARK: - Navigation
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
