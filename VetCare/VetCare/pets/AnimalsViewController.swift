@@ -15,19 +15,16 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let animals = ["bobi", "bolinhas", "max", "benji", "rex", "spotty", "flecha", "freddie"]
-    let weight = ["11", "12", "7", "10", "8", "15", "13", "20"]
-    let owners = ["ana", "joana", "rita", "raquel", "bia", "sofia", "maria", "ines"]
-    
     var animalsNames = [String]()
     var animalsWeight = [Double]()
     var animalsOwners = [String]()
     var animalsImages = [NSData]()
     
     var locationManager: CLLocationManager!
-    var nameAnimal = ""
+    var nameAnimal = String()
     
     var readData = false
+    var beaconRead = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +34,7 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
         collectionView.dataSource = self
         
         readData = false
+        beaconRead = false
         
         initData()
     }
@@ -123,9 +121,16 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
         let uuid = UUID(uuidString: "68f9d1e2-7f72-46d9-8722-9d116b2eab2d")!
         nameAnimal = "Benji"
         let beaconRegion = CLBeaconRegion(proximityUUID: uuid, major: 50, minor: 0, identifier: "cm2018")
-        
-        locationManager.startMonitoring(for: beaconRegion)
-        locationManager.startRangingBeacons(in: beaconRegion)
+        if beaconRead == false{
+            locationManager.startMonitoring(for: beaconRegion)
+            locationManager.startRangingBeacons(in: beaconRegion)
+        }
+        else{
+            locationManager.stopMonitoring(for: beaconRegion)
+            locationManager.stopRangingBeacons(in: beaconRegion)
+            beaconRead = false
+        }
+       
     }
     
     func update(distance: CLProximity) {
@@ -137,6 +142,8 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
                 alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
                 
                 self.present(alert, animated: true)
+                self.beaconRead = true
+                self.startScanning()
             }
         }
     }
