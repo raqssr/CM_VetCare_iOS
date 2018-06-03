@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddAnimalViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddAnimalViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var name: UITextField!
@@ -27,16 +27,37 @@ class AddAnimalViewController: UIViewController, UITextFieldDelegate, UIImagePic
     @IBOutlet weak var observations: UITextField!
     
     var animalImage:UIImage? = nil
+    
+    let thePicker = UIPickerView()
+    let myPickerData = [String](arrayLiteral: "Male", "Female")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        thePicker.delegate = self
+        gender.inputView = thePicker
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return myPickerData.count
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return myPickerData[row]
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        gender.text = myPickerData[row]
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {

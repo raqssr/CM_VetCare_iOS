@@ -33,6 +33,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     var resultQrCode = String()
     var qrCodeRead = false
     var refresher: UIRefreshControl!
+    var refreshingTable = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @objc func reloadEventsForTable(){
+        refreshingTable = true
         calendarEvents.removeAll()
         dates.removeAll()
         hoursTasks.removeAll()
@@ -102,10 +104,15 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
             if animalsName.count == 0{
                 if qrCodeRead == false{
                     stop()
-                    let alert = UIAlertController(title: "Task List", message: "There are no tasks for today!", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                    present(alert, animated: true, completion: nil)
-                    return 0
+                    if refreshingTable == true{
+                        return 0
+                    }
+                    else{
+                        let alert = UIAlertController(title: "Task List", message: "There are no tasks for today!", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                        present(alert, animated: true, completion: nil)
+                        return 0
+                    }
                 }
                 else{
                     return 0
