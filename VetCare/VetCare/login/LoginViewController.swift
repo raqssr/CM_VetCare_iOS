@@ -17,6 +17,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if Auth.auth().currentUser != nil{
+            Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in
+                self.performSegue(withIdentifier: "loginToMain", sender: nil)
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {

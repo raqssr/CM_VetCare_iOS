@@ -35,6 +35,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     var refresher: UIRefreshControl!
     var refreshingTable = false
     
+    var viewWillAppearBoolean = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,9 +50,6 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().scopes = scopes
         GIDSignIn.sharedInstance().signInSilently()
-        
-        print("resultQrCode")
-        print(resultQrCode)
         
         qrCodeRead = false
         
@@ -69,6 +68,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewWillAppearBoolean = true
+        tableView.isHidden = false
         if resultQrCode.isEmpty == false{
             qrCodeRead = true
         }
@@ -91,11 +92,9 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if eventsLoaded == false{
             if signInDone == false{
-                print("vi que ainda nao foi feito sign in")
                 return 0
             }
             else{
-                print("ja foi feito sign in")
                 start()
                 return 0
             }
@@ -108,10 +107,16 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
                         return 0
                     }
                     else{
-                        let alert = UIAlertController(title: "Task List", message: "There are no tasks for today!", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                        present(alert, animated: true, completion: nil)
-                        return 0
+                        if viewWillAppearBoolean == true{
+                            viewWillAppearBoolean = false
+                            return 0
+                        }
+                        else{
+                            let alert = UIAlertController(title: "Task List", message: "There are no tasks for today!", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                            present(alert, animated: true, completion: nil)
+                            return 0
+                        }
                     }
                 }
                 else{
@@ -135,14 +140,12 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         else{
             if signInDone == false{
-                print("eventos carregados mas sem start pq sem sign in")
                 cell.animalName.text = " "
                 cell.task.text = " "
                 cell.hours.text = " "
                 return cell
             }
             else{
-                print("eventos carregados mas c start pq sign in")
                 start()
                 cell.animalName.text = " "
                 cell.task.text = " "
@@ -154,12 +157,9 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error) != nil {
-            print("vou mostrar o alert")
             showAlert(title: "Google Sign In", message: "You must sign in the first time you run the application in order to be able to access google calendar events.")
-            print("vou mostrar o botao")
             signInButton.center = view.center
             view.addSubview(signInButton)
-            print("apareceu")
             self.service.authorizer = nil
         } else {
             signInButton.isHidden = true
@@ -199,13 +199,8 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         if let events = response.items, !events.isEmpty {
             for event in events {
                 var eventDescription = (event.summary!).split(separator: ":")
-                //var animalNameEvent = eventDescription[0]
-                print("evento")
-                print(eventDescription)
-                print("------------")
                 if eventDescription[0] == resultQrCode{
                     if qrCodeRead == true{
-                        print("bora apagar")
                         let query = GTLRCalendarQuery_EventsDelete.query(withCalendarId: "primary", eventId: event.identifier!)
                         service.executeQuery(query, delegate: self, didFinish: nil)
                     }
@@ -233,14 +228,14 @@ class TaskListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         for i in calendarEvents{
             var eventInfo = i.split(separator: "-")
-            var timeInfo = eventInfo[0].trimmingCharacters(in: .whitespaces)
-            var taskInfo = eventInfo[1].trimmingCharacters(in: .whitespaces)
+            let timeInfo = eventInfo[0].trimmingCharacters(in: .whitespaces)
+            let taskInfo = eventInfo[1].trimmingCharacters(in: .whitespaces)
             var dateTime = timeInfo.split(separator: ",")
-            var date = dateTime[0]
-            var time = dateTime[1].trimmingCharacters(in: .whitespaces)
+            let date = dateTime[0]
+            let time = dateTime[1].trimmingCharacters(in: .whitespaces)
             var animalTask = taskInfo.split(separator: ":")
-            var animalName = animalTask[0]
-            var task = animalTask[1].trimmingCharacters(in: .whitespaces)
+            let animalName = animalTask[0]
+            let task = animalTask[1].trimmingCharacters(in: .whitespaces)
             if String(currentDate) == String(date){
                 dates.append(String(date))
                 hoursTasks.append(time)

@@ -15,7 +15,6 @@ class DriveViewController: UIViewController {
         
         if let appURL = URL(string: "googledrive://*"){
             let canOpen = UIApplication.shared.canOpenURL(appURL)
-            print("\(canOpen)")
             
             let appName = "googledrive"
             let appScheme = "\(appName)://"
@@ -39,7 +38,6 @@ class DriveViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print("carregou")
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "main")
         self.present(vc!, animated: true, completion: nil)
         

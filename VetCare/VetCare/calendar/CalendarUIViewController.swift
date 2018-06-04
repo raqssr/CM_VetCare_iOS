@@ -38,19 +38,17 @@ class CalendarUIViewController: CalendarViewController {
         let defaults = UserDefaults.standard
         let calendarEvents = defaults.object(forKey: "eventsForCalendar") as? [String] ?? [String]()
         
-        print(calendarEvents)
         
         for i in calendarEvents{
             //ex: 09/05/2018, 14:30 - hello: ghi
-            print(i)
             var eventInfo = i.split(separator: "-")
             //09/05/2018, 14:30
-            var timeInfo = eventInfo[0].trimmingCharacters(in: .whitespaces)
+            let timeInfo = eventInfo[0].trimmingCharacters(in: .whitespaces)
             //hello: ghi
-            var taskInfo = eventInfo[1].trimmingCharacters(in: .whitespaces)
+            let taskInfo = eventInfo[1].trimmingCharacters(in: .whitespaces)
             var dateTime = timeInfo.split(separator: ",")
             //09/05/2018
-            var date = dateTime[0]
+            let date = dateTime[0]
             //var time = dateTime[1].trimmingCharacters(in: .whitespaces)
             var dateTypes = date.split(separator: "/")
             dayTasks.append(String(dateTypes[0]))
@@ -115,15 +113,4 @@ class CalendarUIViewController: CalendarViewController {
     // A row was selected in the events table. (Use this to push a details view or whatever.)
     override func calendarView(_ calendarView: CalendarView, didSelect event: CalendarEvent) {
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

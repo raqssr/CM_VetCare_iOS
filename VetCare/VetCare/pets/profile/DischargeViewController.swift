@@ -42,9 +42,6 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("name discharge")
-        print(animalNameReport)
         
         // Do any additional setup after loading the view.
         GIDSignIn.sharedInstance().clientID = "1040218745705-4451usgufp84li2njpe66u837hhc7o9s.apps.googleusercontent.com"
@@ -242,7 +239,6 @@ class DischargeViewController: UIViewController, GIDSignInDelegate, GIDSignInUID
         let fetchRequest:NSFetchRequest<Animal> = Animal.fetchRequest()
         do{
             let searchResults = try PersistenceService.getContext().fetch(fetchRequest)
-            print("number of results: \(searchResults.count)")
             
             for result in searchResults as [Animal]{
                 if result.name == animalNameReport{

@@ -57,7 +57,6 @@ class GeneralInfoViewController: UIViewController {
         let fetchRequest:NSFetchRequest<Animal> = Animal.fetchRequest()
         do{
             let searchResults = try PersistenceService.getContext().fetch(fetchRequest)
-            print("number of results: \(searchResults.count)")
             
             for result in searchResults as [Animal]{
                 if result.name! == animalName{
@@ -82,16 +81,4 @@ class GeneralInfoViewController: UIViewController {
         dateFormatter.dateFormat = "dd-MM-yyyy"
         return dateFormatter.string(from: date) //according to date format your date string
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

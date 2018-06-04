@@ -17,6 +17,7 @@
 		CC28E562209B3DE200F1ADCE /* MBCalendarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC28E561209B3DE200F1ADCE /* MBCalendarKit.framework */; };
 		CC28E564209B473900F1ADCE /* CalendarUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28E563209B473900F1ADCE /* CalendarUIViewController.swift */; };
 		CC29F28820AA298B00A78D80 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC29F28720AA298B00A78D80 /* Charts.framework */; };
+		CC33934420C48DAD0016161C /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC33934320C48DAD0016161C /* LogOutViewController.swift */; };
 		CC389B952098A57B00A67F5F /* GeneralInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B942098A57B00A67F5F /* GeneralInfoViewController.swift */; };
 		CC389B972098A59600A67F5F /* HospitalisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B962098A59600A67F5F /* HospitalisationViewController.swift */; };
 		CC389B992098A5A600A67F5F /* HistoricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC389B982098A5A600A67F5F /* HistoricViewController.swift */; };
@@ -51,7 +52,6 @@
 		CCAE2CAD2091DC7A0013A6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAE2CAB2091DC7A0013A6BE /* LaunchScreen.storyboard */; };
 		CCAE2CB52091E22A0013A6BE /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAE2CB42091E22A0013A6BE /* MainController.swift */; };
 		CCC57FB120B31A7300B5957E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC57FB020B31A7300B5957E /* PersistenceService.swift */; };
-		CCCB370B20A786BC0029F410 /* IdentifyAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB370A20A786BC0029F410 /* IdentifyAnimalViewController.swift */; };
 		CCD976682096052300DD29D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCD976672096052300DD29D0 /* Assets.xcassets */; };
 		CCD9766A209617B800DD29D0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD97669209617B800DD29D0 /* ProfileViewController.swift */; };
 		CCD9766C209617D500DD29D0 /* AddAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */; };
@@ -70,6 +70,7 @@
 		CC28E561209B3DE200F1ADCE /* MBCalendarKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBCalendarKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC28E563209B473900F1ADCE /* CalendarUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUIViewController.swift; sourceTree = "<group>"; };
 		CC29F28720AA298B00A78D80 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC33934320C48DAD0016161C /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		CC389B942098A57B00A67F5F /* GeneralInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralInfoViewController.swift; sourceTree = "<group>"; };
 		CC389B962098A59600A67F5F /* HospitalisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalisationViewController.swift; sourceTree = "<group>"; };
 		CC389B982098A5A600A67F5F /* HistoricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +108,6 @@
 		CCAE2CAE2091DC7A0013A6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCAE2CB42091E22A0013A6BE /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		CCC57FB020B31A7300B5957E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
-		CCCB370A20A786BC0029F410 /* IdentifyAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyAnimalViewController.swift; sourceTree = "<group>"; };
 		CCD976672096052300DD29D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCD97669209617B800DD29D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimalViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +185,7 @@
 		CCA7D8C320990213007F28DA /* login */ = {
 			isa = PBXGroup;
 			children = (
+				CC33934320C48DAD0016161C /* LogOutViewController.swift */,
 				CC941B3F2093D1890097EDA9 /* LoginViewController.swift */,
 			);
 			path = login;
@@ -203,7 +204,6 @@
 			children = (
 				CC0540132094DBDA00C39CC6 /* AnimalsViewController.swift */,
 				CCD9766B209617D500DD29D0 /* AddAnimalViewController.swift */,
-				CCCB370A20A786BC0029F410 /* IdentifyAnimalViewController.swift */,
 				CCA7D8C9209902AA007F28DA /* profile */,
 				CC29F28920AA29EE00A78D80 /* vitalsigns */,
 				CCA7D8C82099028B007F28DA /* cells */,
@@ -510,6 +510,7 @@
 				CC0540142094DBDA00C39CC6 /* AnimalsViewController.swift in Sources */,
 				CC06903C209E227400CBD8D4 /* DischargeViewController.swift in Sources */,
 				CC79531620B46D420057644A /* Historic+CoreDataClass.swift in Sources */,
+				CC33934420C48DAD0016161C /* LogOutViewController.swift in Sources */,
 				CC941B402093D1890097EDA9 /* LoginViewController.swift in Sources */,
 				CC389BBF2098CD0400A67F5F /* TaskListTableViewCell.swift in Sources */,
 				CC06903A209E226700CBD8D4 /* SendMessageViewController.swift in Sources */,
@@ -521,7 +522,6 @@
 				CC02E66F20A8EC4D007CC3C0 /* VitalSignsViewController.swift in Sources */,
 				CC0540162094DC9400C39CC6 /* AnimalViewCell.swift in Sources */,
 				CC389BB82098B68400A67F5F /* ProcedureTableViewCell.swift in Sources */,
-				CCCB370B20A786BC0029F410 /* IdentifyAnimalViewController.swift in Sources */,
 				CC79531420B46D420057644A /* Internment+CoreDataClass.swift in Sources */,
 				CC389B952098A57B00A67F5F /* GeneralInfoViewController.swift in Sources */,
 				CC79531C20B46D420057644A /* Animal+CoreDataClass.swift in Sources */,

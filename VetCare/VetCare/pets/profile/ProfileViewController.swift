@@ -101,7 +101,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         let fetchRequest:NSFetchRequest<Animal> = Animal.fetchRequest()
         do{
             let searchResults = try PersistenceService.getContext().fetch(fetchRequest)
-            print("number of results: \(searchResults.count)")
             
             for result in searchResults as [Animal]{
                 if result.name! == name{

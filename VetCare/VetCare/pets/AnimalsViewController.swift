@@ -138,8 +138,7 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
             if  distance == .far || distance == .near || distance == .immediate{
                 let alert = UIAlertController(title: "The animal is:", message: self.nameAnimal, preferredStyle: .alert)
                 
-                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-                alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 
                 self.present(alert, animated: true)
                 self.beaconRead = true
@@ -161,7 +160,6 @@ class AnimalsViewController: UIViewController, UICollectionViewDelegate, UIColle
         let fetchRequest:NSFetchRequest<Animal> = Animal.fetchRequest()
         do{
             let searchResults = try PersistenceService.getContext().fetch(fetchRequest)
-            print("number of results: \(searchResults.count)")
             
             for result in searchResults as [Animal]{
                 animalsNames.append(result.name!)

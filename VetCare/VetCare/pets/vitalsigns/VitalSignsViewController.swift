@@ -19,7 +19,7 @@ class VitalSignsViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.title = "Vital Signs"
         
-        var navigationBarAppearace = UINavigationBar.appearance()
+        let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.barTintColor = UIColor.white
 
         chartView.delegate = self as? ChartViewDelegate
@@ -115,13 +115,3 @@ class VitalSignsViewController: UIViewController {
     }
     
 }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */

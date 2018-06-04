@@ -19,9 +19,6 @@ class SendMessageViewController: UIViewController, UITextViewDelegate, MFMessage
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("name message")
-        print(animalNameMessage)
         
         // Do any additional setup after loading the view.
         messageBox.text = nil
@@ -60,7 +57,6 @@ class SendMessageViewController: UIViewController, UITextViewDelegate, MFMessage
         let fetchRequest:NSFetchRequest<Animal> = Animal.fetchRequest()
         do{
             let searchResults = try PersistenceService.getContext().fetch(fetchRequest)
-            print("number of results: \(searchResults.count)")
             
             for result in searchResults as [Animal]{
                 if result.name! == animalNameMessage{
