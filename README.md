@@ -23,7 +23,7 @@ An important point is to be able to quickly identify an animal.
 
 ## Observations
 
-* This app was developed in Swift during almost two months in the course of Mobile Computing. Before this, there was no experience with iOS development.
+* This app was developed in Swift during almost two months in the course of Mobile Computing. Before this, there was no experience in iOS development.
 * Credentials will not be provided to anyone.
 * This project's report can be seen here where all the application is described in detail and where it's also present screenshots of the app. 
 
